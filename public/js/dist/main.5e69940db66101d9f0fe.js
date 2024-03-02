@@ -6,7 +6,7 @@ var __webpack_exports__ = {};
 class Test {
   constructor() {
     this.main = () => {
-      console.log('no other instructors got swagger like us');
+      console.log('Welcome to our MARVELous Comic Store');
     };
   }
 }
