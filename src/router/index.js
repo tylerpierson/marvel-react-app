@@ -9,6 +9,7 @@ const AppRouter = () => {
 	const [user, setUser] = useState(getUser())
 	return (
 		<Router>
+			<div className={styles.animation}></div>
 			<main className={styles.App}>
 			{
 				user ?

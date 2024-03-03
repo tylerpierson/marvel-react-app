@@ -1,9 +1,13 @@
 .CategoryList {
-    color: var(--text-light);
+    height: 310px;
+    overflow-y: scroll;
+    color: var(--text-dark);
     list-style: none;
     padding: 0;
     font-size: 1.7vw;
-    border: 5px solid red;
+    border: 5px solid orange;
+    border-radius: 10px;
+    background-color: var(--tan-1);
     }
     
     .CategoryList li {

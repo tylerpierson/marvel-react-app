@@ -5,7 +5,7 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--text-light);
-    border: 5px solid yellow;
+    border-radius: 10px;
   }
   
   .OrderDetail .sectionHeading {
@@ -33,7 +33,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.5vw;
-    color: var(--text-dark);
+    color: var(--text-light);
   }
   
   .OrderDetail .total span.right {

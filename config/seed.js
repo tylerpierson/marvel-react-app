@@ -1,8 +1,8 @@
-require('dotenv').config()
-require('./database')
-const fetch = require('node-fetch')
-const Category = require('../models/category')
-const Item = require('../models/item')
+require('dotenv').config();
+require('./database');
+const fetch = require('node-fetch');
+const Category = require('../models/category');
+const Item = require('../models/item');
 
 (async function() {
   try {
@@ -10,10 +10,59 @@ const Item = require('../models/item')
       'Avengers',
       'X-Men',
       'Fantastic Four',
+      'Iron Man',
+      'Black Widow',
+      'Hulk',
+      'The Sentry',
+      'Thunderbolts',
       'Spider-Man',
       'Thor',
       'Deadpool',
-      'Captain America',
+      'Black Panther',
+      'Thanos',
+      'Black Order',
+      'Silver Surfer',
+      'Kang the Conqueror',
+      'Doctor Strange',
+      'Doctor Doom',
+      'Galactus',
+      'Ant-Man',
+      'Hawkeye',
+      'Inhumans',
+      'Captain Marvel',
+      'Guardians of the Galaxy',
+      'Wolverine',
+      'Venom',
+      'Carnage',
+      'Falcon',
+      'Winter Soldier',
+      'Loki',
+      'Ms. Marvel',
+      'Magneto',
+      'Scarlet Witch',
+      'Daredevil',
+      'Adam Warlock',
+      'Nick Fury',
+      'She-Hulk',
+      'Blade',
+      'Ghost Rider',
+      'Vision',
+      'The Punisher',
+      'Moon Knight',
+      'Luke Cage',
+      'Jessica Jones',
+      'Spider-Woman',
+      'Gwenpool',
+      'Nova',
+      'Green Goblin',
+      'New Mutants',
+      'Hercules',
+      'Amadeus Cho',
+      'Beyonder',
+      'Molecule Man',
+      'Mafisto',
+      'Mister Sinister',
+      'Champions'
     ];
 
     const publicKey = process.env.PUBLIC_KEY
@@ -33,7 +82,7 @@ const Item = require('../models/item')
       }
 
       let index = 3
-      while (comics.filter(comic => comic.category.name === name).length < 10 && index < data.data.results.length) {
+      while (comics.filter(comic => comic.category.name === name).length < 30 && index < data.data.results.length) {
         const comicData = data.data.results[index]
         const thumbnail = comicData.thumbnail
         if (!thumbnail || thumbnail.path.includes('image_not_available')) {
