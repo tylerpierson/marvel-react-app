@@ -287,7 +287,9 @@ function MenuListItem(_ref) {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].name
   }, menuItem.name), /*#__PURE__*/React.createElement("div", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].buy
-  }, /*#__PURE__*/React.createElement("span", null, "$", menuItem.price.toFixed(2)))));
+  }, /*#__PURE__*/React.createElement("span", {
+    className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].price
+  }, "$", menuItem.price.toFixed(2)))));
 }
 
 /***/ }),
@@ -1564,7 +1566,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
 
 .iu1byFQ3KEJx5e_Gudwl {
   width: 100%;
-  height: 3rem;
+  height: 100%;
   color: white;
   border: none;
   font-size: 1.4rem;
@@ -1579,6 +1581,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
 }
 
 .ERPQ19fMf34OMekvT8Rm {
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1588,10 +1591,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
 
 .dPkAa6uYS6bfLVCI00Bv {
   width: 100%;
-  height: 15vh;
+  height: 100%;
   font-size: 1rem;
+  z-index: 100;
+  background-color: black;
   color: white;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,qBAAA;EACA,kBAAA;AAEJ;AADI;EACE,qBAAA;EACA,qBAAA;AAGN;AADI;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,8BAAA;EACA,eAAA;EACA,qBAAA;AAGN;;AAEA;EACE,YAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AACF;AAAE;EACE,eAAA;EACA,qBAAA;EACA,qBAAA;AAEJ;;AAEA;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,YAAA;AACF","sourcesContent":[".MenuListItem {\n  width: 12%;\n  height: 45vmin;\n  margin: 0 1rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  overflow-x: hidden;\n  .imgContainer {\n    position: relative;\n    transition: .3s ease;\n    max-height: 30vmin;\n    &:hover {\n      transform: scale(1.1);\n      transition: .3s ease;\n    }\n    &:hover .Add{\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      background: rgba(0, 0, 0, .6);\n      cursor: pointer;\n      transition: .2s ease;\n    }\n  }\n}\n\n.Add {\n  color: white;\n  font-size: 1.5rem;\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  text-align: center;\n}\n\n.image {\n  width: 100%;\n}\n\n.info {\n  width: 100%;\n  height: 3rem;\n  color: white;\n  border: none;\n  font-size: 1.4rem;\n  background-color: darkred;\n  z-index: 100;\n  transition: .2s ease;\n  &:hover {\n    cursor: pointer;\n    background-color: red;\n    transition: .2s ease;\n  }\n}\n\n.btnContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 10vmin;\n}\n\n.bottomContainer {\n  width: 100%;\n  height: 15vh;\n  font-size: 1rem;\n  color: white;\n}"],"sourceRoot":""}]);
+}
+.dPkAa6uYS6bfLVCI00Bv .VR1OCl60qOXrRx1IzVEa {
+  font-size: 1.5rem;
+}
+.dPkAa6uYS6bfLVCI00Bv .LQAtqRrJ5r8YCugoQu8W {
+  font-size: 1.3rem;
+  color: rgba(242, 242, 242, 0.6823529412);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,qBAAA;EACA,kBAAA;AAEJ;AADI;EACE,qBAAA;EACA,qBAAA;AAGN;AADI;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,8BAAA;EACA,eAAA;EACA,qBAAA;AAGN;;AAEA;EACE,YAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AACF;AAAE;EACE,eAAA;EACA,qBAAA;EACA,qBAAA;AAEJ;;AAEA;EACE,UAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,YAAA;EACA,uBAAA;EACA,YAAA;AACF;AAAE;EACE,iBAAA;AAEJ;AAAE;EACE,iBAAA;EACA,wCAAA;AAEJ","sourcesContent":[".MenuListItem {\n  width: 12%;\n  height: 45vmin;\n  margin: 0 1rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  overflow-x: hidden;\n  .imgContainer {\n    position: relative;\n    transition: .3s ease;\n    max-height: 30vmin;\n    &:hover {\n      transform: scale(1.1);\n      transition: .3s ease;\n    }\n    &:hover .Add{\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      background: rgba(0, 0, 0, .6);\n      cursor: pointer;\n      transition: .2s ease;\n    }\n  }\n}\n\n.Add {\n  color: white;\n  font-size: 1.5rem;\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  text-align: center;\n}\n\n.image {\n  width: 100%;\n}\n\n.info {\n  width: 100%;\n  height: 100%;\n  color: white;\n  border: none;\n  font-size: 1.4rem;\n  background-color: darkred;\n  z-index: 100;\n  transition: .2s ease;\n  &:hover {\n    cursor: pointer;\n    background-color: red;\n    transition: .2s ease;\n  }\n}\n\n.btnContainer {\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 10vmin;\n}\n\n.bottomContainer {\n  width: 100%;\n  height: 100%;\n  font-size: 1rem;\n  z-index: 100;\n  background-color: black;\n  color: white;\n  .name {\n    font-size: 1.5rem;\n  }\n  .price {\n    font-size: 1.3rem;\n    color: #f2f2f2ae;\n  }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
@@ -1600,7 +1612,9 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"image": `dTwdG1Vxh_kNAcuyMLbz`,
 	"info": `iu1byFQ3KEJx5e_Gudwl`,
 	"btnContainer": `ERPQ19fMf34OMekvT8Rm`,
-	"bottomContainer": `dPkAa6uYS6bfLVCI00Bv`
+	"bottomContainer": `dPkAa6uYS6bfLVCI00Bv`,
+	"name": `VR1OCl60qOXrRx1IzVEa`,
+	"price": `LQAtqRrJ5r8YCugoQu8W`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -25,7 +25,7 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
       <div className={styles.bottomContainer}>
           <div className={styles.name}>{menuItem.name}</div>
           <div className={styles.buy}>
-            <span>${menuItem.price.toFixed(2)}</span>
+            <span className={styles.price}>${menuItem.price.toFixed(2)}</span>
           </div>
       </div>
     </div>

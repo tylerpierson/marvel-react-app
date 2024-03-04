@@ -59,6 +59,16 @@ const Item = require('../models/item');
       'Hercules',
       'Champions',
       'Secret Wars',
+      'Franklin Richards',
+      'Invisible Woman',
+      'Thing',
+      'Man-Thing',
+      'Werewolf by Night',
+      'Infinity Gauntlet',
+      'What If...',
+      'Marvel Zombies',
+      'Miles Morales',
+      'Gwen Stacy'
     ];
 
     const publicKey = process.env.PUBLIC_KEY
