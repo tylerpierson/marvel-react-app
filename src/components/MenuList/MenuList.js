@@ -11,7 +11,9 @@ export default function MenuList({ menuItems, handleAddToOrder }) {
   );
   return (
     <main className={styles.MenuList}>
-      {items}
+      <div className={styles.MenuListContainer}>
+        {items}
+      </div>
     </main>
   );
 }

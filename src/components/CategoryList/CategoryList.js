@@ -1,20 +1,25 @@
-import styles from './CategoryList.module.scss';
+import styles from './CategoryList.module.scss'
 
-export default function CategoryList({ categories, activeCat, setActiveCat }) {
-  const cats = categories.map(cat =>
+export default function CategoryList({ categories, activeCat, setActiveCat, user, setUser }) {
+  const cats = categories.map(cat => (
     <li
       key={cat}
       className={cat === activeCat ? styles.active : ''}
-      // FYI, the below will also work, but will give a warning
-      // className={cat === activeCat && 'active'}
       onClick={() => setActiveCat(cat)}
     >
       {cat}
     </li>
-  );
+  ))
+
   return (
-    <ul className={styles.CategoryList}>
-      {cats}
-    </ul>
-  );
+    <>
+    <div className={styles.CategoryListContainer}>
+      <h2 className={styles.greeting}>Welcome {user.name}</h2>
+      <h4 className={styles.greeting}>CHOOSE YOUR HERO</h4>
+      <ul className={styles.CategoryList}>
+        {cats}
+      </ul>
+    </div>
+    </>
+  )
 }

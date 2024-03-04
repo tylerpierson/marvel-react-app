@@ -57,7 +57,8 @@ const Item = require('../models/item');
       'Green Goblin',
       'New Mutants',
       'Hercules',
-      'Champions'
+      'Champions',
+      'Secret Wars',
     ];
 
     const publicKey = process.env.PUBLIC_KEY

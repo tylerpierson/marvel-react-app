@@ -1,3 +1,43 @@
+.CategoryListContainer {
+    height: 80vh;
+    overflow: hidden;
+}
+
 .CategoryList {
-    border: 3px solid red;
+    height: 100%;
+    width: 20rem;    
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0;
+    font-size: 1.7vw;
+    background: url('https://i.imgur.com/AMLSb7p.jpg');
+    background-size: contain;
+}
+
+.CategoryList li {
+padding: .6vmin;
+text-align: center;
+border-radius: .5vmin;
+margin-bottom: .5vmin;
+font-size: 2rem;
+}
+
+.CategoryList li:hover:not(.active) {
+cursor: pointer;
+color: black;
+background-color: rgba(139, 0, 0, .4);
+}
+
+.CategoryList li.active {
+color: red;
+background-color: rgba(139, 0, 0, .1);
+font-weight: bold;
+}
+
+.greeting {
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    ;
 }

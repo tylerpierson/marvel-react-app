@@ -2,9 +2,11 @@ import styles from './OrderHistoryPage.module.scss';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as ordersAPI from '../../utilities/orders-api';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import UserInfo from '../../components/UserInfo/UserInfo';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import NavBar from '../../components/NavBar/NavBar';
+import Footer from '../../components/Footer/Footer';
 
 export default function OrderHistoryPage({ user, setUser }) {
   /*--- State --- */
@@ -30,10 +32,12 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   /*--- Rendered UI --- */
   return (
+    <>
+    <NavBar />
     <main className={styles.OrderHistoryPage}>
       <aside className={styles.aside}>
         <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
-        <UserLogOut user={user} setUser={setUser} />
+        <UserInfo user={user} setUser={setUser} />
       </aside>
       <OrderList
         orders={orders}
@@ -44,5 +48,7 @@ export default function OrderHistoryPage({ user, setUser }) {
         order={activeOrder}
       />
     </main>
+    <Footer />
+    </>
   );
 }

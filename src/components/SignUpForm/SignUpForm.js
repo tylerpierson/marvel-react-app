@@ -30,6 +30,7 @@ handleSubmit = async (evt) => {
     const user = await signUp(formData);
     // Baby step
     this.props.setUser(user);
+    window.location.reload()
   } catch {
     // An error happened on the server
     this.setState({ error: 'Sign Up Failed - Try Again' });

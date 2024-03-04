@@ -1,3 +1,12 @@
 .MenuList {
-    border: 3px solid orange;
+    background-color: black;
+    .MenuListContainer {
+        height: 80vh;
+        overflow-y: scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        }
 }

@@ -1,3 +1,75 @@
 .MenuListItem {
-  border: 3px solid teal;
+  width: 12%;
+  height: 45vmin;
+  margin: 0 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  .imgContainer {
+    position: relative;
+    transition: .3s ease;
+    max-height: 30vmin;
+    &:hover {
+      transform: scale(1.1);
+      transition: .3s ease;
+    }
+    &:hover .Add{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      background: rgba(0, 0, 0, .6);
+      cursor: pointer;
+      transition: .2s ease;
+    }
+  }
+}
+
+.Add {
+  color: white;
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+  height: 3rem;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  background-color: darkred;
+  z-index: 100;
+  transition: .2s ease;
+  &:hover {
+    cursor: pointer;
+    background-color: red;
+    transition: .2s ease;
+  }
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vmin;
+}
+
+.bottomContainer {
+  width: 100%;
+  height: 15vh;
+  font-size: 1rem;
+  color: white;
 }
