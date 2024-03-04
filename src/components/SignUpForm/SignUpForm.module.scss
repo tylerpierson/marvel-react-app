@@ -1,3 +1,52 @@
-.formContainer {
-    padding: 80px;
+.SignUpForm {
+    position: absolute;
+    right: 0;
+    .h1 {
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        text-shadow: 1px 1px 2px red;
+    }
+    .formContainer {
+        width: 32vw;
+        height: 600px;
+        background-color: rgba(255, 255, 255, .3);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(139, 0, 0, .4);
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .inputContainer {
+            width: 300px;
+            margin-bottom: 25px;
+        }
+        .label {
+            margin-bottom: 5px;
+        }
+        .input {
+            height: 40px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .btn {
+            height: 40px;
+            width: 300px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+    }
 }
+.errorMessage {
+    color: white;
+  }

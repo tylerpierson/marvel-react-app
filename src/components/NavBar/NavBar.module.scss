@@ -1,0 +1,63 @@
+.NavBar {
+    list-style: none;
+    background-color: rgba(0, 0, 0, .7);
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .ul {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .a {
+            height: 100%;
+            width: 150px;
+            list-style-type: none;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            position: relative;
+            &:hover {
+                cursor: pointer;
+            }
+            .li {
+                z-index: 1000;
+            }
+            &.home {
+                z-index: 100;
+                &:hover .animation {
+                    justify-content: left;
+                }
+            }
+            &.midBtn {
+                z-index: 100;
+            }
+            &.logOut {
+                z-index: 99;
+                &:hover .animation {
+                    left: 0;
+                }
+            }
+            .animation {
+                background-color: rgba(139, 0, 0, .9);
+                position: absolute;
+                left: -150px;
+                height: 100%;
+                width: 150px;
+                z-index: 101;
+                transition: left 0.3s ease;
+            }
+        }
+    }
+}
+
+.h1 {
+    color: white;
+    font-size: 50px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}

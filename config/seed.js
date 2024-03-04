@@ -57,11 +57,6 @@ const Item = require('../models/item');
       'Green Goblin',
       'New Mutants',
       'Hercules',
-      'Amadeus Cho',
-      'Beyonder',
-      'Molecule Man',
-      'Mafisto',
-      'Mister Sinister',
       'Champions'
     ];
 

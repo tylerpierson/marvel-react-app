@@ -4,16 +4,17 @@ import { useState } from 'react'
 import styles from './AppRouter.module.scss';
 import { getUser } from '../utilities/users-service';
 import AuthPage from '../pages/AuthPage/AuthPage';
+import NavBar from '../components/NavBar/NavBar'
 
 const AppRouter = () => {
 	const [user, setUser] = useState(getUser())
 	return (
 		<Router>
-			<div className={styles.animation}></div>
 			<main className={styles.App}>
 			{
 				user ?
 			<>
+			<NavBar />
 			<Routes>
 				{routes.map(({ Component, key, path }) => (
 					<Route
@@ -28,7 +29,7 @@ const AppRouter = () => {
 						}
 					></Route>
 				))}
-				<Route path='/*' element={<Navigate to="/orders/new"/>}/>
+				<Route path='/*' element={<Navigate to="/"/>}/>
 			</Routes>
 			</>
 			:

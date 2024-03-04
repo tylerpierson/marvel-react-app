@@ -1,16 +1,32 @@
 .AuthPage {
+  background: url('https://i.imgur.com/5sZVHCI.jpg');
+  background-position: bottom 0px right 37px;
+  background-size: cover;
   height: 100%;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  background-color: var(--white);
-  border-radius: 2vmin;
-  border: 5px solid black;
-}
-
-.AuthPage h3 {
-  margin-top: 4vmin;
-  text-align: center;
-  color: var(--text-light);
-  cursor: pointer;
+  .btnContainer {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .h3 {
+      font-size: 35px;
+      margin: 0 65px 100px 0;
+      padding: 10px 20px;
+      color: white;
+      border: 1px solid darkred;
+      border-radius: 10px;
+      background-color: rgba(139, 0, 0, .3);
+      transition: .2s ease;
+      &:hover {
+        cursor: pointer;
+        background-color: red;
+        transform: scale(1.1);
+        transition: .2s ease;
+      }
+    }
+  }
 }
