@@ -26,7 +26,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             </div>
           }
         </div>
-        <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}>
+        <div className={`${styles.lineItemContainer}`}>
           {lineItems.length ?
             <>
               <div className={styles.LineItemscontainer}>
