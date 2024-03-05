@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+  position: relative;
   .imgContainer {
     position: relative;
     transition: .3s ease;
@@ -26,6 +27,10 @@
       transition: .2s ease;
     }
   }
+}
+
+.itemTitle {
+  color: black;
 }
 
 .Add {

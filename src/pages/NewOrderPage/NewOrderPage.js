@@ -72,12 +72,14 @@ export default function NewOrderPage({ user, setUser }) {
     </main>
     <footer className={styles.Footer}>
     <Footer />
-    <OrderDetail
-        order={cart}
-        handleChangeQty={handleChangeQty}
-        handleCheckout={handleCheckout}
-    />
-    <Link to="/orders" className={styles.Link}>PREVIOUS ORDERS</Link>
+    <div className={styles.orderContainer}>
+      <Link to="/orders" className={styles.Link}>PREVIOUS ORDERS</Link>
+      <OrderDetail
+          order={cart}
+          handleChangeQty={handleChangeQty}
+          handleCheckout={handleCheckout}
+      />
+    </div>
     </footer>
     </>
     )

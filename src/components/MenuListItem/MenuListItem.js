@@ -1,14 +1,6 @@
-import { useNavigate } from 'react-router-dom';
-import styles from './MenuListItem.module.scss';
+import styles from './MenuListItem.module.scss'
 
-export default function MenuListItem({ menuItem, handleAddToOrder }) {
-  const navigateTo = useNavigate();
-
-  const viewShowPage = (event) => {
-    event.preventDefault(); // Prevent the default behavior of anchor tag
-    navigateTo('/comic');
-  };
-
+export default function MenuListItem({ menuItem, handleAddToOrder, toggleComicInfo }) {
   return (
     <div className={styles.MenuListItem}>
       <div className={styles.imgContainer}>
@@ -20,15 +12,14 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
         </a>
       </div>
       <div className={styles.btnContainer}>
-        <button className={styles.info} onClick={viewShowPage}>View Comic Info</button>
+        <button className={styles.info} onClick={() => toggleComicInfo(menuItem)}>View Comic Info</button>
       </div>
       <div className={styles.bottomContainer}>
-          <div className={styles.name}>{menuItem.name}</div>
-          <div className={styles.buy}>
-            <span className={styles.price}>${menuItem.price.toFixed(2)}</span>
-          </div>
+        <div className={styles.name}>{menuItem.name}</div>
+        <div className={styles.buy}>
+          <span className={styles.price}>${menuItem.price.toFixed(2)}</span>
+        </div>
       </div>
     </div>
-  );
+  )
 }
-

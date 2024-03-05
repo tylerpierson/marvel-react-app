@@ -1,5 +1,79 @@
 .MenuList {
     background-color: black;
+    .comicInfoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        .comicInfo {
+          display: flex;
+          background-color: rgba(255,255,255, 0.9);
+          width: 50%;
+          height: 90%;
+          padding: 3rem;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          position: relative;
+          .itemImage {
+            width: 100%;
+            margin-right: 2rem;
+          }
+          .closeBtn {
+            padding: 0;
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 100%;
+            top: 1rem;
+            right: 1rem;
+            border: none;
+            background-color: darkred;
+            color: white;
+            transition: .2s ease;
+            .span {
+              position: absolute;
+              top: -.1rem;
+              right: 1.05rem;
+              margin: 0;
+              font-size: 3rem;
+            }
+            .left {
+              transform: rotate(195deg);
+            }
+            .right {
+              transform: rotate(165deg);
+            }
+            &:hover {
+              background-color: red;
+              cursor: pointer;
+              box-shadow: 0 0 10px black;
+              transition: .2s ease;
+            }
+          }
+          .textContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            overflow-y: scroll;
+            .itemTitle {
+              color: red;
+              font-size: 3.5rem;
+              font-weight: bold;
+            }
+            .itemDescription {
+              color: black;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
     .MenuListContainer {
         height: 80vh;
         overflow-y: scroll;

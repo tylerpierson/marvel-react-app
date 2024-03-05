@@ -20,30 +20,35 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           {order.isPaid ?
             <span>ORDER <span className="smaller">{order.orderId}</span></span>
             :
-            <span>NEW ORDER </span>
+            <div className={styles.checkOutBtnContainer}>
+              <span className={styles.totalQty}>{order.totalQty}</span>
+              <button className={styles.cart}>View Cart</button>
+            </div>
           }
-          <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
         <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}>
           {lineItems.length ?
             <>
-              {lineItems}
+              <div className={styles.LineItemscontainer}>
+                {lineItems}
+              </div>
               <section className={styles.total}>
+                <span className={styles.totalPrice}>${order.orderTotal.toFixed(2)}</span>
                 {order.isPaid ?
-                  <span className={styles.right}>TOTAL&nbsp;&nbsp;</span>
+                  <span className={styles.totalPrice}>TOTAL&nbsp;&nbsp;</span>
                   :
-                  <button
-                    className="btn-sm"
-                    onClick={handleCheckout}
-                    disabled={!lineItems.length}
-                  >CHECKOUT</button>
+                  <div className={styles.buttonsContainer}>
+                      <button
+                        className={styles.button}
+                        onClick={handleCheckout}
+                        disabled={!lineItems.length}
+                      >CHECKOUT</button>
+                    </div>
                 }
-                <span>{order.totalQty}</span>
-                <span className={styles.right}>${order.orderTotal.toFixed(2)}</span>
               </section>
             </>
             :
-            <div className={styles.hungry}>Ready to dive into the world of Marvel?</div>
+            ''
           }
         </div>
       </div>

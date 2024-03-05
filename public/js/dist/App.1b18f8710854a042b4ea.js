@@ -79,8 +79,6 @@ function LineItem(_ref) {
   return /*#__PURE__*/React.createElement("div", {
     className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].LineItem
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex-ctr-ctr"
-  }, lineItem.item.emoji), /*#__PURE__*/React.createElement("div", {
     className: "flex-ctr-ctr flex-col"
   }, /*#__PURE__*/React.createElement("span", {
     className: "align-ctr"
@@ -215,9 +213,17 @@ function LoginForm(_ref) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ MenuList)
 /* harmony export */ });
-/* harmony import */ var _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuList.module.scss */ "./src/components/MenuList/MenuList.module.scss");
-/* harmony import */ var _MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../MenuListItem/MenuListItem */ "./src/components/MenuListItem/MenuListItem.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MenuList.module.scss */ "./src/components/MenuList/MenuList.module.scss");
+/* harmony import */ var _MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../MenuListItem/MenuListItem */ "./src/components/MenuListItem/MenuListItem.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
 
 
 function MenuList(_ref) {
@@ -225,16 +231,45 @@ function MenuList(_ref) {
     menuItems,
     handleAddToOrder
   } = _ref;
-  const items = menuItems.map(item => /*#__PURE__*/React.createElement(_MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  const [showComicInfo, setShowComicInfo] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [selectedItem, setSelectedItem] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const toggleComicInfo = item => {
+    setShowComicInfo(!showComicInfo);
+    setSelectedItem(_objectSpread(_objectSpread({}, item), {}, {
+      description: item.description
+    }));
+  };
+  const items = menuItems.map(item => /*#__PURE__*/React.createElement(_MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: item._id,
     handleAddToOrder: handleAddToOrder,
-    menuItem: item
+    menuItem: item,
+    toggleComicInfo: toggleComicInfo
   }));
   return /*#__PURE__*/React.createElement("main", {
-    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].MenuList
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].MenuList
   }, /*#__PURE__*/React.createElement("div", {
-    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].MenuListContainer
-  }, items));
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].MenuListContainer
+  }, showComicInfo && selectedItem && /*#__PURE__*/React.createElement("div", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].comicInfoContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].comicInfo
+  }, /*#__PURE__*/React.createElement("img", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].itemImage,
+    src: selectedItem.image
+  }), /*#__PURE__*/React.createElement("div", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].textContainer
+  }, /*#__PURE__*/React.createElement("h3", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].itemTitle
+  }, selectedItem.name), /*#__PURE__*/React.createElement("p", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].itemDescription
+  }, selectedItem.description)), /*#__PURE__*/React.createElement("button", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].closeBtn,
+    onClick: () => setShowComicInfo(false)
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "".concat(_MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].span, " ").concat(_MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].left)
+  }, "/"), /*#__PURE__*/React.createElement("span", {
+    className: "".concat(_MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].span, " ").concat(_MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].right)
+  }, "\\")))), items));
 }
 
 /***/ }),
@@ -248,21 +283,15 @@ function MenuList(_ref) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ MenuListItem)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuListItem.module.scss */ "./src/components/MenuListItem/MenuListItem.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
 
 function MenuListItem(_ref) {
   let {
     menuItem,
-    handleAddToOrder
+    handleAddToOrder,
+    toggleComicInfo
   } = _ref;
-  const navigateTo = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
-  const viewShowPage = event => {
-    event.preventDefault(); // Prevent the default behavior of anchor tag
-    navigateTo('/comic');
-  };
   return /*#__PURE__*/React.createElement("div", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].MenuListItem
   }, /*#__PURE__*/React.createElement("div", {
@@ -280,7 +309,7 @@ function MenuListItem(_ref) {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].btnContainer
   }, /*#__PURE__*/React.createElement("button", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].info,
-    onClick: viewShowPage
+    onClick: () => toggleComicInfo(menuItem)
   }, "View Comic Info")), /*#__PURE__*/React.createElement("div", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].bottomContainer
   }, /*#__PURE__*/React.createElement("div", {
@@ -391,21 +420,29 @@ function OrderDetail(_ref) {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].sectionHeading
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", null, "ORDER ", /*#__PURE__*/React.createElement("span", {
     className: "smaller"
-  }, order.orderId)) : /*#__PURE__*/React.createElement("span", null, "NEW ORDER "), /*#__PURE__*/React.createElement("span", null, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
+  }, order.orderId)) : /*#__PURE__*/React.createElement("div", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].checkOutBtnContainer
+  }, /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalQty
+  }, order.totalQty), /*#__PURE__*/React.createElement("button", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].cart
+  }, "View Cart"))), /*#__PURE__*/React.createElement("div", {
     className: "".concat(_OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineItemContainer, " flex-ctr-ctr flex-col scroll-y")
-  }, lineItems.length ? /*#__PURE__*/React.createElement(React.Fragment, null, lineItems, /*#__PURE__*/React.createElement("section", {
+  }, lineItems.length ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].LineItemscontainer
+  }, lineItems), /*#__PURE__*/React.createElement("section", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].total
-  }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
-    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
-  }, "TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
-    className: "btn-sm",
+  }, /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalPrice
+  }, "$", order.orderTotal.toFixed(2)), order.isPaid ? /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalPrice
+  }, "TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("div", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].buttonsContainer
+  }, /*#__PURE__*/React.createElement("button", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button,
     onClick: handleCheckout,
     disabled: !lineItems.length
-  }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", null, order.totalQty), /*#__PURE__*/React.createElement("span", {
-    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
-  }, "$", order.orderTotal.toFixed(2)))) : /*#__PURE__*/React.createElement("div", {
-    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].hungry
-  }, "Ready to dive into the world of Marvel?")));
+  }, "CHECKOUT")))) : ''));
 }
 
 /***/ }),
@@ -824,14 +861,16 @@ function NewOrderPage(_ref) {
     handleAddToOrder: handleAddToOrder
   }))), /*#__PURE__*/React.createElement("footer", {
     className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].Footer
-  }, /*#__PURE__*/React.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, /*#__PURE__*/React.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/React.createElement("div", {
+    className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].orderContainer
+  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
+    to: "/orders",
+    className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].Link
+  }, "PREVIOUS ORDERS"), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_4__["default"], {
     order: cart,
     handleChangeQty: handleChangeQty,
     handleCheckout: handleCheckout
-  }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
-    to: "/orders",
-    className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].Link
-  }, "PREVIOUS ORDERS")));
+  }))));
 }
 
 /***/ }),
@@ -921,24 +960,6 @@ function OrderHistoryPage(_ref) {
 
 /***/ }),
 
-/***/ "./src/pages/ShowPage/ShowPage.js":
-/*!****************************************!*\
-  !*** ./src/pages/ShowPage/ShowPage.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ShowPage)
-/* harmony export */ });
-/* harmony import */ var _ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShowPage.module.scss */ "./src/pages/ShowPage/ShowPage.module.scss");
-/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-function ShowPage() {
-  return /*#__PURE__*/React.createElement("h1", null, "ShowPage");
-}
-
-/***/ }),
-
 /***/ "./src/router/index.js":
 /*!*****************************!*\
   !*** ./src/router/index.js ***!
@@ -1007,8 +1028,6 @@ const AppRouter = () => {
 /* harmony import */ var _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/NewOrderPage/NewOrderPage */ "./src/pages/NewOrderPage/NewOrderPage.js");
 /* harmony import */ var _pages_OrderHistoryPage_OrderHistoryPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/OrderHistoryPage/OrderHistoryPage */ "./src/pages/OrderHistoryPage/OrderHistoryPage.js");
 /* harmony import */ var _pages_AuthPage_AuthPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/AuthPage/AuthPage */ "./src/pages/AuthPage/AuthPage.js");
-/* harmony import */ var _pages_ShowPage_ShowPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/ShowPage/ShowPage */ "./src/pages/ShowPage/ShowPage.js");
-
 
 
 
@@ -1016,10 +1035,6 @@ const routes = [{
   Component: _pages_AuthPage_AuthPage__WEBPACK_IMPORTED_MODULE_2__["default"],
   key: 'AuthPage',
   path: '/'
-}, {
-  Component: _pages_ShowPage_ShowPage__WEBPACK_IMPORTED_MODULE_3__["default"],
-  key: 'ShowPage',
-  path: '/comic'
 }, {
   Component: _pages_NewOrderPage_NewOrderPage__WEBPACK_IMPORTED_MODULE_0__["default"],
   key: 'NewOrder',
@@ -1482,6 +1497,80 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   background-color: black;
 }
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 50%;
+  height: 90%;
+  padding: 3rem;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .CecPaOfWJ0jlOSurJnOX {
+  width: 100%;
+  margin-right: 2rem;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .sgQfPYSukrfxLueXvvLm {
+  padding: 0;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: darkred;
+  color: white;
+  transition: 0.2s ease;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .sgQfPYSukrfxLueXvvLm .dotnt3_d9458ZPUX_zYX {
+  position: absolute;
+  top: -0.1rem;
+  right: 1.05rem;
+  margin: 0;
+  font-size: 3rem;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .sgQfPYSukrfxLueXvvLm .tlxC3xqmqZzyPChTciOQ {
+  transform: rotate(195deg);
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .sgQfPYSukrfxLueXvvLm .NprZ_eSvywMcpgxH8PUy {
+  transform: rotate(165deg);
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .sgQfPYSukrfxLueXvvLm:hover {
+  background-color: red;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  transition: 0.2s ease;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .QYbBFvDEQ0saqEWMgAUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .QYbBFvDEQ0saqEWMgAUs .hPFzDfy1orcjzK_5zwnK {
+  color: red;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .QYbBFvDEQ0saqEWMgAUs .drthdUFoiLOgraV2BMyH {
+  color: black;
+  font-size: 1.5rem;
+}
 .eBz5FvD9TgyIgfFi1MdG .szJxIZ6JmL7o0WcvrfqA {
   height: 80vh;
   overflow-y: scroll;
@@ -1490,10 +1579,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;AACJ;AAAI;EACI,YAAA;EACA,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,WAAA;AAER","sourcesContent":[".MenuList {\n    background-color: black;\n    .MenuListContainer {\n        height: 80vh;\n        overflow-y: scroll;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        flex-wrap: wrap;\n        width: 100%;\n        }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;AACJ;AAAI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,gCAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,oCAAA;AAER;AADQ;EACE,aAAA;EACA,0CAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,6BAAA;EACA,+BAAA;EACA,kBAAA;AAGV;AAFU;EACE,WAAA;EACA,kBAAA;AAIZ;AAFU;EACE,UAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAIZ;AAHY;EACE,kBAAA;EACA,YAAA;EACA,cAAA;EACA,SAAA;EACA,eAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;AAKd;AAFU;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,kBAAA;AAIZ;AAHY;EACE,UAAA;EACA,iBAAA;EACA,iBAAA;AAKd;AAHY;EACE,YAAA;EACA,iBAAA;AAKd;AAAI;EACI,YAAA;EACA,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,WAAA;AAER","sourcesContent":[".MenuList {\n    background-color: black;\n    .comicInfoContainer {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        z-index: 1000;\n        position: absolute;\n        transform: translate(-50%, -50%);\n        top: 50%;\n        left: 50%;\n        height: 100%;\n        width: 100%;\n        background-color: rgba(0, 0, 0, .6);\n        .comicInfo {\n          display: flex;\n          background-color: rgba(255,255,255, 0.9);\n          width: 50%;\n          height: 90%;\n          padding: 3rem;\n          border-top-right-radius: 10px;\n          border-bottom-left-radius: 10px;\n          position: relative;\n          .itemImage {\n            width: 100%;\n            margin-right: 2rem;\n          }\n          .closeBtn {\n            padding: 0;\n            position: absolute;\n            width: 3rem;\n            height: 3rem;\n            border-radius: 100%;\n            top: 1rem;\n            right: 1rem;\n            border: none;\n            background-color: darkred;\n            color: white;\n            transition: .2s ease;\n            .span {\n              position: absolute;\n              top: -.1rem;\n              right: 1.05rem;\n              margin: 0;\n              font-size: 3rem;\n            }\n            .left {\n              transform: rotate(195deg);\n            }\n            .right {\n              transform: rotate(165deg);\n            }\n            &:hover {\n              background-color: red;\n              cursor: pointer;\n              box-shadow: 0 0 10px black;\n              transition: .2s ease;\n            }\n          }\n          .textContainer {\n            display: flex;\n            flex-direction: column;\n            align-items: center; \n            overflow-y: scroll;\n            .itemTitle {\n              color: red;\n              font-size: 3.5rem;\n              font-weight: bold;\n            }\n            .itemDescription {\n              color: black;\n              font-size: 1.5rem;\n            }\n          }\n        }\n      }\n    .MenuListContainer {\n        height: 80vh;\n        overflow-y: scroll;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        flex-wrap: wrap;\n        width: 100%;\n        }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuList": `eBz5FvD9TgyIgfFi1MdG`,
+	"comicInfoContainer": `A3sZOIEuWqCoYRCQhGfJ`,
+	"comicInfo": `GnXUt5IX1hCCAWLhXp8D`,
+	"itemImage": `CecPaOfWJ0jlOSurJnOX`,
+	"closeBtn": `sgQfPYSukrfxLueXvvLm`,
+	"span": `dotnt3_d9458ZPUX_zYX`,
+	"left": `tlxC3xqmqZzyPChTciOQ`,
+	"right": `NprZ_eSvywMcpgxH8PUy`,
+	"textContainer": `QYbBFvDEQ0saqEWMgAUs`,
+	"itemTitle": `hPFzDfy1orcjzK_5zwnK`,
+	"itemDescription": `drthdUFoiLOgraV2BMyH`,
 	"MenuListContainer": `szJxIZ6JmL7o0WcvrfqA`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -1529,6 +1628,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+  position: relative;
 }
 .X4tFBfG4MKknHvd01CKE .H_5E1DPqefx0Kvuk6YQs {
   position: relative;
@@ -1547,6 +1647,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   background: rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.2s ease;
+}
+
+.W3aOXlSIj3s8YI1AZn1g {
+  color: black;
 }
 
 .GewV1IFwtvc9NRR4mFko {
@@ -1603,12 +1707,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
 .dPkAa6uYS6bfLVCI00Bv .LQAtqRrJ5r8YCugoQu8W {
   font-size: 1.3rem;
   color: rgba(242, 242, 242, 0.6823529412);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,qBAAA;EACA,kBAAA;AAEJ;AADI;EACE,qBAAA;EACA,qBAAA;AAGN;AADI;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,8BAAA;EACA,eAAA;EACA,qBAAA;AAGN;;AAEA;EACE,YAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AACF;AAAE;EACE,eAAA;EACA,qBAAA;EACA,qBAAA;AAEJ;;AAEA;EACE,UAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,YAAA;EACA,uBAAA;EACA,YAAA;AACF;AAAE;EACE,iBAAA;AAEJ;AAAE;EACE,iBAAA;EACA,wCAAA;AAEJ","sourcesContent":[".MenuListItem {\n  width: 12%;\n  height: 45vmin;\n  margin: 0 1rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  overflow-x: hidden;\n  .imgContainer {\n    position: relative;\n    transition: .3s ease;\n    max-height: 30vmin;\n    &:hover {\n      transform: scale(1.1);\n      transition: .3s ease;\n    }\n    &:hover .Add{\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      background: rgba(0, 0, 0, .6);\n      cursor: pointer;\n      transition: .2s ease;\n    }\n  }\n}\n\n.Add {\n  color: white;\n  font-size: 1.5rem;\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  text-align: center;\n}\n\n.image {\n  width: 100%;\n}\n\n.info {\n  width: 100%;\n  height: 100%;\n  color: white;\n  border: none;\n  font-size: 1.4rem;\n  background-color: darkred;\n  z-index: 100;\n  transition: .2s ease;\n  &:hover {\n    cursor: pointer;\n    background-color: red;\n    transition: .2s ease;\n  }\n}\n\n.btnContainer {\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 10vmin;\n}\n\n.bottomContainer {\n  width: 100%;\n  height: 100%;\n  font-size: 1rem;\n  z-index: 100;\n  background-color: black;\n  color: white;\n  .name {\n    font-size: 1.5rem;\n  }\n  .price {\n    font-size: 1.3rem;\n    color: #f2f2f2ae;\n  }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,cAAA;EACA,cAAA;EACA,mBAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,qBAAA;EACA,kBAAA;AAEJ;AADI;EACE,qBAAA;EACA,qBAAA;AAGN;AADI;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,8BAAA;EACA,eAAA;EACA,qBAAA;AAGN;;AAEA;EACE,YAAA;AACF;;AAEA;EACE,YAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,iBAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AACF;AAAE;EACE,eAAA;EACA,qBAAA;EACA,qBAAA;AAEJ;;AAEA;EACE,UAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;EACA,cAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,eAAA;EACA,YAAA;EACA,uBAAA;EACA,YAAA;AACF;AAAE;EACE,iBAAA;AAEJ;AAAE;EACE,iBAAA;EACA,wCAAA;AAEJ","sourcesContent":[".MenuListItem {\n  width: 12%;\n  height: 45vmin;\n  margin: 0 1rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  overflow-x: hidden;\n  position: relative;\n  .imgContainer {\n    position: relative;\n    transition: .3s ease;\n    max-height: 30vmin;\n    &:hover {\n      transform: scale(1.1);\n      transition: .3s ease;\n    }\n    &:hover .Add{\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      background: rgba(0, 0, 0, .6);\n      cursor: pointer;\n      transition: .2s ease;\n    }\n  }\n}\n\n.itemTitle {\n  color: black;\n}\n\n.Add {\n  color: white;\n  font-size: 1.5rem;\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  padding: 1rem;\n  text-align: center;\n}\n\n.image {\n  width: 100%;\n}\n\n.info {\n  width: 100%;\n  height: 100%;\n  color: white;\n  border: none;\n  font-size: 1.4rem;\n  background-color: darkred;\n  z-index: 100;\n  transition: .2s ease;\n  &:hover {\n    cursor: pointer;\n    background-color: red;\n    transition: .2s ease;\n  }\n}\n\n.btnContainer {\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: 10vmin;\n}\n\n.bottomContainer {\n  width: 100%;\n  height: 100%;\n  font-size: 1rem;\n  z-index: 100;\n  background-color: black;\n  color: white;\n  .name {\n    font-size: 1.5rem;\n  }\n  .price {\n    font-size: 1.3rem;\n    color: #f2f2f2ae;\n  }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
 	"imgContainer": `H_5E1DPqefx0Kvuk6YQs`,
 	"Add": `GewV1IFwtvc9NRR4mFko`,
+	"itemTitle": `W3aOXlSIj3s8YI1AZn1g`,
 	"image": `dTwdG1Vxh_kNAcuyMLbz`,
 	"info": `iu1byFQ3KEJx5e_Gudwl`,
 	"btnContainer": `ERPQ19fMf34OMekvT8Rm`,
@@ -1738,12 +1843,119 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
-  border: 0.3rem solid green;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,0BAAA;AACF","sourcesContent":[".OrderDetail {\n  border: .3rem solid green;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `.CyfcHNtv1VgnXd_5fGlq {
+  height: 5vh;
+  width: 12vw;
+  position: relative;
+}
+.CyfcHNtv1VgnXd_5fGlq .h9JmrZXsbkyHUL5udmun {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
+  background-color: black;
+  color: white;
+  border: 0.1rem solid white;
+}
+.CyfcHNtv1VgnXd_5fGlq .WfGuikh3obsWohTYPLWm {
+  height: 5vh;
+  width: 12vw;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.1rem solid white;
+  background-color: darkred;
+  color: white;
+  transition: 0.2s ease;
+}
+.CyfcHNtv1VgnXd_5fGlq .WfGuikh3obsWohTYPLWm:hover {
+  background-color: red;
+  color: white;
+  border: none;
+  transition: 0.2s ease;
+}
+
+.vVkqXbRqxMYDCnUttflb {
+  width: 30vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 80vh;
+  overflow-y: scroll;
+  z-index: 2000;
+  bottom: 10vh;
+  right: 0;
+}
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 {
+  background-color: darkred;
+  color: white;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+}
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 .qNtiRvndMCsLxZjeMJKO {
+  font-size: 3rem;
+}
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 .BeChgJT2vnK0xYUTyRJi {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 .zypoFNoBI8rmWRRI9Gn4 {
+  border: none;
+  padding: 0.375em 1.125em;
+  font-size: 1rem;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  background: black;
+  color: white;
+  box-shadow: 0 0px 0px hsla(190, 15%, 5%, 0.2);
+  transform: translateY(0);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s 0.3s ease-out, border-bottom-right-radius 0.15s 0.45s ease-out, border-bottom-left-radius 0.15s 0.6s ease-out, box-shadow 0.6s ease-out, transform 0.6s ease-out, background 0.6s steps(4, jump-end);
+}
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 .zypoFNoBI8rmWRRI9Gn4:hover,
+.vVkqXbRqxMYDCnUttflb .V5OAbv7QFHo6WglNx0m0 .zypoFNoBI8rmWRRI9Gn4:focus {
+  cursor: pointer;
+  box-shadow: 0 4px 8px hsla(190, 15%, 5%, 0.2);
+  transform: scale(0.8);
+  background: red;
+  border: 0.2rem solid white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,WAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,0BAAA;AAEJ;AAAE;EACE,WAAA;EACA,WAAA;EACA,iBAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,0BAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAEJ;AADI;EACE,qBAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;AAGN;;AAEA;EACE,WAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,eAAA;EACA,8BAAA;EACA,uBAAA;EACA,oCAAA;EACA,YAAA;EACA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,QAAA;AACF;AAAE;EACE,yBAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AAEJ;AADI;EACE,eAAA;AAGN;AADI;EACE,UAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AAGN;AAAI;EACE,YAAA;EACA,wBAAA;EACA,eAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,iBAAA;EACA,YAAA;EAEA,6CAAA;EACA,wBAAA;EACA,2BAAA;EACA,4BAAA;EACA,8BAAA;EACA,+BAAA;EAEA,2RACE;AADR;AAUI;;EAEE,eAAA;EACA,6CAAA;EACA,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,4BAAA;EACA,6BAAA;EACA,+BAAA;EACA,gCAAA;AARN","sourcesContent":[".checkOutBtnContainer {\n  height: 5vh;\n  width: 12vw;\n  position: relative;\n  .totalQty {\n    position: absolute;\n    top: -5px;\n    left: -10px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.3rem;\n    height: 3rem;\n    width: 3rem;\n    border-radius: 100%;\n    background-color: black;\n    color: white;\n    border: .1rem solid white;\n  }\n  .cart {\n    height: 5vh;\n    width: 12vw;\n    font-size: 1.5rem;\n    text-decoration: none;\n    padding: 1rem;\n    border-radius: 1rem;\n    border: .1rem solid white;\n    background-color: darkred;\n    color: white;\n    transition: .2s ease;\n    &:hover {\n      background-color: red;\n      color: white;\n      border: none;\n      transition: .2s ease;\n    }\n  }\n}\n\n.lineItemContainer {\n  width: 30vw;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, .8);\n  height: 80vh;\n  overflow-y: scroll;\n  z-index: 2000;\n  bottom: 10vh;\n  right: 0;\n  .total {\n    background-color: darkred;\n    color: white;\n    width: 100%;\n    height: 10%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding-left: 2rem;\n    .totalPrice {\n      font-size: 3rem;\n    }\n    .buttonsContainer {\n      width: 45%;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n    \n    .button {\n      border: none;\n      padding: .375em 1.125em;\n      font-size: 1rem;\n      height: 100%;\n      width: 100%;\n      font-size: 2rem;\n      background: black;\n      color: white;\n      \n      box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);\n      transform: translateY(0);\n      border-top-left-radius: 0px;\n      border-top-right-radius: 0px;\n      border-bottom-left-radius: 0px;\n      border-bottom-right-radius: 0px;\n            \n      transition:\n        border-top-left-radius .15s .15s ease-out,\n        border-top-right-radius .15s calc(.15s * 2) ease-out,\n        border-bottom-right-radius .15s calc(.15s * 3) ease-out,\n        border-bottom-left-radius .15s calc(.15s * 4) ease-out,\n        box-shadow calc(.15s * 4) ease-out,\n        transform calc(.15s * 4) ease-out,\n        background calc(.15s * 4) steps(4, jump-end);\n    }\n    \n    .button:hover,\n    .button:focus {\n      cursor: pointer;\n      box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);\n      transform: scale(.8);\n      background: red;\n      border: .2rem solid white;\n      border-top-left-radius: 16px;\n      border-top-right-radius: 16px;\n      border-bottom-left-radius: 16px;\n      border-bottom-right-radius: 16px;\n    }\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"OrderDetail": `cPR75kdAXDGVxib0PszB`
+	"checkOutBtnContainer": `CyfcHNtv1VgnXd_5fGlq`,
+	"totalQty": `h9JmrZXsbkyHUL5udmun`,
+	"cart": `WfGuikh3obsWohTYPLWm`,
+	"lineItemContainer": `vVkqXbRqxMYDCnUttflb`,
+	"total": `V5OAbv7QFHo6WglNx0m0`,
+	"totalPrice": `qNtiRvndMCsLxZjeMJKO`,
+	"buttonsContainer": `BeChgJT2vnK0xYUTyRJi`,
+	"button": `zypoFNoBI8rmWRRI9Gn4`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2008,13 +2220,24 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.RZqTJBeYN7RXwcHgPFys {
-  border: 0.3rem dashed green;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .RZqTJBeYN7RXwcHgPFys .LgbTsDBltisTZ7ENfVwn {
   max-height: 100%;
   display: flex;
+}
+.RZqTJBeYN7RXwcHgPFys .IUzwWMBl7TBSER4ARuO7 {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-color: white;
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
 }
 
 .l2661R3pSzpbaUAe1k_r {
@@ -2022,10 +2245,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RZqTJBeYN7RXwcHgPFys {
   color: white;
   height: 10vh;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
 }
-.l2661R3pSzpbaUAe1k_r .kUf9SmaZTP5wMKdToah0 {
+.l2661R3pSzpbaUAe1k_r .e5w5Ob7snuwRT3uzWE1M {
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+}
+.l2661R3pSzpbaUAe1k_r .e5w5Ob7snuwRT3uzWE1M .kUf9SmaZTP5wMKdToah0 {
+  font-size: 1.5rem;
+  width: 12vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   padding: 1rem;
   border-radius: 1rem;
@@ -2034,17 +2269,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RZqTJBeYN7RXwcHgPFys {
   color: white;
   transition: 0.2s ease;
 }
-.l2661R3pSzpbaUAe1k_r .kUf9SmaZTP5wMKdToah0:hover {
+.l2661R3pSzpbaUAe1k_r .e5w5Ob7snuwRT3uzWE1M .kUf9SmaZTP5wMKdToah0:hover {
   background-color: red;
   color: white;
   border: none;
   transition: 0.2s ease;
-}`, "",{"version":3,"sources":["webpack://./src/pages/NewOrderPage/NewOrderPage.module.scss"],"names":[],"mappings":"AAAA;EACE,2BAAA;EACA,aAAA;EACA,sBAAA;AACF;AAAE;EACE,gBAAA;EACA,aAAA;AAEJ;;AAEA;EACE,oCAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;AACF;AAAE;EACE,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,0BAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAEJ;AADI;EACE,qBAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;AAGN","sourcesContent":[".NewOrderPage {\n  border: .3rem dashed green;\n  display: flex;\n  flex-direction: column;\n  .MenuContainer {\n    max-height: 100%;\n    display: flex;\n  }\n}\n\n.Footer {\n  background-color: rgba(0, 0, 0, .7);\n  color: white;\n  height: 10vh;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  .Link {\n    text-decoration: none;\n    padding: 1rem;\n    border-radius: 1rem;\n    border: .1rem solid white;\n    background-color: darkred;\n    color: white;\n    transition: .2s ease;\n    &:hover {\n      background-color: red;\n      color: white;\n      border: none;\n      transition: .2s ease;\n    }\n  }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/NewOrderPage/NewOrderPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACA,kBAAA;AACF;AAAE;EACE,gBAAA;EACA,aAAA;AAEJ;AAAE;EACE,kBAAA;EACA,UAAA;EACA,WAAA;EACA,uBAAA;EACA,YAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,aAAA;AAEJ;;AAEA;EACE,oCAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,eAAA;AACF;AAAE;EACE,aAAA;EACA,6BAAA;EACA,WAAA;AAEJ;AADI;EACE,iBAAA;EACA,WAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,0BAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAGN;AAFM;EACE,qBAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;AAIR","sourcesContent":[".NewOrderPage {\n  display: flex;\n  flex-direction: column;\n  position: relative;\n  .MenuContainer {\n    max-height: 100%;\n    display: flex;\n  }\n  .comicInfo {\n    position: absolute;\n    width: 60%;\n    height: 60%;\n    background-color: white;\n    color: black;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    z-index: 2000;\n  }\n}\n\n.Footer {\n  background-color: rgba(0, 0, 0, .7);\n  color: white;\n  height: 10vh;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 2rem;\n  .orderContainer {\n    display: flex;\n    justify-content: space-around;\n    width: 30vw;\n    .Link {\n      font-size: 1.5rem;\n      width: 12vw;\n      height: 5vh;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      text-decoration: none;\n      padding: 1rem;\n      border-radius: 1rem;\n      border: .1rem solid white;\n      background-color: darkred;\n      color: white;\n      transition: .2s ease;\n      &:hover {\n        background-color: red;\n        color: white;\n        border: none;\n        transition: .2s ease;\n      }\n    }\n  }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NewOrderPage": `RZqTJBeYN7RXwcHgPFys`,
 	"MenuContainer": `LgbTsDBltisTZ7ENfVwn`,
+	"comicInfo": `IUzwWMBl7TBSER4ARuO7`,
 	"Footer": `l2661R3pSzpbaUAe1k_r`,
+	"orderContainer": `e5w5Ob7snuwRT3uzWE1M`,
 	"Link": `kUf9SmaZTP5wMKdToah0`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -2077,32 +2314,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.U7F51i6q23MB43wS4GeC {
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderHistoryPage": `U7F51i6q23MB43wS4GeC`
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/ShowPage/ShowPage.module.scss":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/ShowPage/ShowPage.module.scss ***!
-  \****************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -2927,56 +3138,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-
-/***/ "./src/pages/ShowPage/ShowPage.module.scss":
-/*!*************************************************!*\
-  !*** ./src/pages/ShowPage/ShowPage.module.scss ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
-
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./ShowPage.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/ShowPage/ShowPage.module.scss");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ShowPage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
