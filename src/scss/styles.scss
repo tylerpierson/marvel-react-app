@@ -12,27 +12,30 @@ body {
 }
 
 input {
-  background-color: rgba(139, 0, 0 , .2);
+  background-color: rgba(207, 195, 152 , .3);
 }
 
 input:focus {
-  background-color: rgb(255, 245, 245);
+  background-color: rgb(217, 206, 167);
   outline: none;
   box-shadow: 0 0 .4rem red;
 }
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  color: rgba(207, 195, 152 , .3);
+  background-color: rgba(207, 195, 152 , .3);
   &:hover {
-    background-color: transparent;
-    color: black;
+    background-color: rgba(207, 195, 152 , .3);
+    color: rgba(207, 195, 152 , .3);
     transform: none;
   }
 }
 
 button[type="submit"] {
-  background-color: rgba(139, 0, 0 , .2);
+  background-color: rgba(139, 0, 0 , .8);
+  color: white;
+  border: none;
   transition: .2s ease;
 }
 

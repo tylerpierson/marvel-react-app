@@ -9,7 +9,7 @@
     .formContainer {
         width: 32vw;
         height: 60rem;
-        background-color: rgba(255, 255, 255, .3);
+        background-color: rgba(207, 195, 152, .2);
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
         color: white;
@@ -17,7 +17,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 2rem rgba(139, 0, 0, .4);
+        box-shadow: 0 0 2rem rgba(0, 0, 0, .4);
     }
     .form {
         display: flex;
@@ -37,6 +37,7 @@
             border-radius: 1rem;
             padding: 0 1rem;
             box-sizing: border-box;
+            font-size: 1.8rem;
         }
         .btn {
             height: 4rem;

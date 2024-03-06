@@ -1,9 +1,12 @@
+import React, { useState } from 'react';
 import styles from './OrderDetail.module.scss';
 import LineItem from '../LineItem/LineItem';
 
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
     if (!order) return null;
+
+    const [showCart, setShowCart] = useState(false);
 
     const lineItems = order.lineItems.map(item =>
       <LineItem
@@ -22,35 +25,29 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             :
             <div className={styles.checkOutBtnContainer}>
               <span className={styles.totalQty}>{order.totalQty}</span>
-              <button className={styles.cart}>View Cart</button>
+              <button className={styles.cart} onClick={() => setShowCart(!showCart)}>View Cart</button>
             </div>
           }
         </div>
-        <div className={`${styles.lineItemContainer}`}>
-          {lineItems.length ?
-            <>
-              <div className={styles.LineItemscontainer}>
-                {lineItems}
-              </div>
-              <section className={styles.total}>
-                <span className={styles.totalPrice}>${order.orderTotal.toFixed(2)}</span>
-                {order.isPaid ?
-                  <span className={styles.totalPrice}>TOTAL&nbsp;&nbsp;</span>
-                  :
-                  <div className={styles.buttonsContainer}>
-                      <button
-                        className={styles.button}
-                        onClick={handleCheckout}
-                        disabled={!lineItems.length}
-                      >CHECKOUT</button>
-                    </div>
-                }
-              </section>
-            </>
-            :
-            ''
-          }
+        <div className={`${styles.lineItemContainer} ${showCart ? styles.lineItemContainerVisible : ''}`}>
+          <div className={styles.LineItemscontainer}>
+            {lineItems}
+          </div>
+          <section className={styles.total}>
+            <span className={styles.totalPrice}>${order.orderTotal.toFixed(2)}</span>
+            {order.isPaid ?
+              <span className={styles.totalPrice}>TOTAL&nbsp;&nbsp;</span>
+              :
+              <div className={styles.buttonsContainer}>
+                  <button
+                    className={styles.button}
+                    onClick={handleCheckout}
+                    disabled={!lineItems.length}
+                  >CHECKOUT</button>
+                </div>
+            }
+          </section>
         </div>
       </div>
     );
-  }
+}
