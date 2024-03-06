@@ -68,12 +68,15 @@ const Item = require('../models/item');
       'What If...',
       'Marvel Zombies',
       'Miles Morales',
-      'Gwen Stacy'
+      'Gwen Stacy',
+      'Young Avengers'
     ];
 
     const publicKey = process.env.PUBLIC_KEY;
     const privateKey = process.env.PRIVATE_KEY;
     const timestamp = new Date().getTime().toString();
+
+    // Create a hash for API authentication so I can access the Marvel API
     const hash = require('crypto')
       .createHash('md5')
       .update(timestamp + privateKey + publicKey)
@@ -81,26 +84,34 @@ const Item = require('../models/item');
     const baseUrl = 'https://gateway.marvel.com/v1/public';
 
     const comics = [];
+
+    // Loop through each superhero to fetch comics
     for (const name of superheros) {
       const response = await fetch(`${baseUrl}/comics?apikey=${publicKey}&ts=${timestamp}&hash=${hash}&titleStartsWith=${name}`);
       const data = await response.json();
 
+      // Check to see if there is any data for the superheo, if not, skip to the next
       if (!data || !data.data || !data.data.results || data.data.results.length === 0) {
         console.log(`No data found for ${name}`);
         continue;
       }
 
-      let index = 3;
+      // Set the index that I want to start searching from
+      let index = 0;
       while (comics.filter(comic => comic.category.name === name).length < 30 && index < data.data.results.length) {
         const comicData = data.data.results[index];
         const thumbnail = comicData.thumbnail;
+
+        // If there isn;t a thumbnail available, skip to the next index in the array
         if (!thumbnail || thumbnail.path.includes('image_not_available')) {
           index++;
           continue;
         }
         
+        // Set a description variable and set a ternary statement so that if there isn't a description it will still populate
         const description = comicData.description ? comicData.description : 'No description available';
 
+        // Create an object for the comic item and add it to the array
         const item = {
           name: comicData.title,
           image: `${thumbnail.path}.${thumbnail.extension}`,
