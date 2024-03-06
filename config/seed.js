@@ -69,7 +69,6 @@ const Item = require('../models/item');
       'Marvel Zombies',
       'Miles Morales',
       'Gwen Stacy',
-      'Young Avengers'
     ];
 
     const publicKey = process.env.PUBLIC_KEY;
