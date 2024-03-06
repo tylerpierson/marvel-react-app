@@ -23,6 +23,7 @@
             position: relative;
             &:hover {
                 cursor: pointer;
+                background-color: rgba(139, 0, 0, .5);
             }
             .li {
                 z-index: 1000;
@@ -56,9 +57,7 @@
     }
 }
 
-.h1 {
-    color: white;
-    font-size: 5rem;
-    -webkit-text-stroke-width: .2rem;
-    -webkit-text-stroke-color: black;
+.logo {
+    height: 10vh;
+    margin-left: 4rem;
 }

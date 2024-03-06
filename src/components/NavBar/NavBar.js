@@ -22,7 +22,7 @@ export default function NavBar(props) {
     return (
         <>
             <nav className={styles.NavBar}>
-                <h1 className={styles.h1}>Comic Shop</h1>
+                <img className={styles.logo} src="https://i.imgur.com/5vF9iRw.png"/>
                 <ul className={styles.ul}>
                     <a className={`${styles.a} ${isHomePage && styles.home}`} href='/orders/new'>
                         <li className={styles.li}>Home</li>

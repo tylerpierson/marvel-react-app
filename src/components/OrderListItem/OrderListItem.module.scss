@@ -1,3 +1,22 @@
 .OrderListItem {
-    border: .3rem solid pink;
+    border: .3rem solid black;
+    height: 10vh;
+    margin: 2rem 1rem;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.text {
+    font-size: 2.5rem;
+}
+
+.textDate {
+    color: rgba(0, 0, 0, .5);
+    font-size: 1.7rem;
+}
+
+.textPrice {
+    color: darkred;
+    font-size: 2.5rem;
 }

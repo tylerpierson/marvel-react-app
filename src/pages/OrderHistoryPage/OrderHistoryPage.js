@@ -35,20 +35,22 @@ export default function OrderHistoryPage({ user, setUser }) {
     <>
     <NavBar />
     <main className={styles.OrderHistoryPage}>
-      <aside className={styles.aside}>
-        <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
-        <UserInfo user={user} setUser={setUser} />
-      </aside>
       <OrderList
         orders={orders}
         activeOrder={activeOrder}
         handleSelectOrder={handleSelectOrder}
       />
-      <OrderDetail
-        order={activeOrder}
-      />
-    </main>
-    <Footer />
+      <div className={styles.bottomContainer}>
+        <div className={styles.buttonsContainer}>
+          <Link to="/orders/new" className={styles.button}>BUY MORE!</Link>
+        </div> 
+        <h2 className={styles.gratitude}>Thank You for Shopping!</h2>
+      </div>
+    </main> 
+    <footer className={styles.Footer}>
+      <UserInfo user={user} setUser={setUser} />
+      <Footer />
+    </footer>
     </>
   );
 }

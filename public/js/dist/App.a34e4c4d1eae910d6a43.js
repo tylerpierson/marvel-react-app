@@ -357,9 +357,10 @@ function NavBar(props) {
   const isHomePage = location.pathname === '/orders/new';
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("nav", {
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].NavBar
-  }, /*#__PURE__*/React.createElement("h1", {
-    className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].h1
-  }, "Comic Shop"), /*#__PURE__*/React.createElement("ul", {
+  }, /*#__PURE__*/React.createElement("img", {
+    className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].logo,
+    src: "https://i.imgur.com/5vF9iRw.png"
+  }), /*#__PURE__*/React.createElement("ul", {
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].ul
   }, /*#__PURE__*/React.createElement("a", {
     className: "".concat(_NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].a, " ").concat(isHomePage && _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].home),
@@ -509,15 +510,19 @@ function OrderListItem(_ref) {
   return /*#__PURE__*/React.createElement("div", {
     className: "".concat(_OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].OrderListItem, " ").concat(isSelected ? _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].selected : ''),
     onClick: () => handleSelectOrder(order)
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, "Order Id: ", /*#__PURE__*/React.createElement("span", {
-    className: "smaller"
-  }, order.orderId)), /*#__PURE__*/React.createElement("div", {
-    className: "smaller"
-  }, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].textDate
+  }, new Date(order.updatedAt).toLocaleDateString()), /*#__PURE__*/React.createElement("div", {
+    className: _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].text
+  }, "Order Id: ", /*#__PURE__*/React.createElement("span", {
+    className: _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].text
+  }, order.orderId))), /*#__PURE__*/React.createElement("div", {
     className: "align-rt"
-  }, /*#__PURE__*/React.createElement("div", null, "$", order.orderTotal.toFixed(2)), /*#__PURE__*/React.createElement("div", {
-    className: "smaller"
-  }, order.totalQty, " Item", order.totalQty > 1 ? 's' : '')));
+  }, /*#__PURE__*/React.createElement("div", {
+    className: _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].text
+  }, order.totalQty, " Item", order.totalQty > 1 ? 's' : ''), /*#__PURE__*/React.createElement("div", {
+    className: _OrderListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].textPrice
+  }, "$", order.orderTotal.toFixed(2))));
 }
 
 /***/ }),
@@ -947,21 +952,25 @@ function OrderHistoryPage(_ref) {
   /*--- Rendered UI --- */
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/React.createElement("main", {
     className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].OrderHistoryPage
-  }, /*#__PURE__*/React.createElement("aside", {
-    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].aside
-  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
-    to: "/orders/new",
-    className: "button btn-sm"
-  }, "NEW ORDER"), /*#__PURE__*/React.createElement(_components_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    user: user,
-    setUser: setUser
-  })), /*#__PURE__*/React.createElement(_components_OrderList_OrderList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/React.createElement(_components_OrderList_OrderList__WEBPACK_IMPORTED_MODULE_3__["default"], {
     orders: orders,
     activeOrder: activeOrder,
     handleSelectOrder: handleSelectOrder
-  }), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    order: activeOrder
-  })), /*#__PURE__*/React.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null));
+  }), /*#__PURE__*/React.createElement("div", {
+    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].bottomContainer
+  }, /*#__PURE__*/React.createElement("div", {
+    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].buttonsContainer
+  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+    to: "/orders/new",
+    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button
+  }, "BUY MORE!")), /*#__PURE__*/React.createElement("h2", {
+    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].gratitude
+  }, "Thank You for Shopping!"))), /*#__PURE__*/React.createElement("footer", {
+    className: _OrderHistoryPage_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].Footer
+  }, /*#__PURE__*/React.createElement(_components_UserInfo_UserInfo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    user: user,
+    setUser: setUser
+  }), /*#__PURE__*/React.createElement(_components_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null)));
 }
 
 /***/ }),
@@ -1819,6 +1828,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
 }
 .QpVD3qAS0nYBtoQqAYoe .VhefOyE6KqL2INmTvax_ .dhW_3NOTL31WgKdnvuMQ:hover {
   cursor: pointer;
+  background-color: rgba(139, 0, 0, 0.5);
 }
 .QpVD3qAS0nYBtoQqAYoe .VhefOyE6KqL2INmTvax_ .dhW_3NOTL31WgKdnvuMQ .qX3Jm8O2TDklTOBfqqeu {
   z-index: 1000;
@@ -1849,12 +1859,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   transition: left 0.3s ease;
 }
 
-.gfJm8VzDtdLiDqkAemvS {
-  color: white;
-  font-size: 5rem;
-  -webkit-text-stroke-width: 0.2rem;
-  -webkit-text-stroke-color: black;
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,oCAAA;EACA,YAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;AACJ;AAAI;EACI,YAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;AAER;AADQ;EACI,YAAA;EACA,YAAA;EACA,qBAAA;EACA,qBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,kBAAA;AAGZ;AAFY;EACI,eAAA;AAIhB;AAFY;EACI,aAAA;EACA,eAAA;AAIhB;AAFY;EACI,YAAA;AAIhB;AAHgB;EACI,qBAAA;AAKpB;AAFY;EACI,YAAA;AAIhB;AAFY;EACI,WAAA;AAIhB;AAHgB;EACI,OAAA;AAKpB;AAFY;EACI,sCAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,0BAAA;AAIhB;;AAEA;EACI,YAAA;EACA,eAAA;EACA,iCAAA;EACA,gCAAA;AACJ","sourcesContent":[".NavBar {\n    list-style: none;\n    background-color: rgba(0, 0, 0, .7);\n    height: 10vh;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    .ul {\n        height: 100%;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        .a {\n            height: 100%;\n            width: 15rem;\n            list-style-type: none;\n            text-decoration: none;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            font-size: 2rem;\n            color: white;\n            position: relative;\n            &:hover {\n                cursor: pointer;\n            }\n            .li {\n                z-index: 1000;\n                font-size: 2rem;\n            }\n            &.home {\n                z-index: 100;\n                &:hover .animation {\n                    justify-content: left;\n                }\n            }\n            &.midBtn {\n                z-index: 100;\n            }\n            &.logOut {\n                z-index: 99;\n                &:hover .animation {\n                    left: 0;\n                }\n            }\n            .animation {\n                background-color: rgba(139, 0, 0, .9);\n                position: absolute;\n                left: -15rem;\n                height: 100%;\n                width: 15rem;\n                z-index: 101;\n                transition: left 0.3s ease;\n            }\n        }\n    }\n}\n\n.h1 {\n    color: white;\n    font-size: 5rem;\n    -webkit-text-stroke-width: .2rem;\n    -webkit-text-stroke-color: black;\n}\n"],"sourceRoot":""}]);
+.jYKTy3ZWAvpUGWbHDeNH {
+  height: 10vh;
+  margin-left: 4rem;
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,oCAAA;EACA,YAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;AACJ;AAAI;EACI,YAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;AAER;AADQ;EACI,YAAA;EACA,YAAA;EACA,qBAAA;EACA,qBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,kBAAA;AAGZ;AAFY;EACI,eAAA;EACA,sCAAA;AAIhB;AAFY;EACI,aAAA;EACA,eAAA;AAIhB;AAFY;EACI,YAAA;AAIhB;AAHgB;EACI,qBAAA;AAKpB;AAFY;EACI,YAAA;AAIhB;AAFY;EACI,WAAA;AAIhB;AAHgB;EACI,OAAA;AAKpB;AAFY;EACI,sCAAA;EACA,kBAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,0BAAA;AAIhB;;AAEA;EACI,YAAA;EACA,iBAAA;AACJ","sourcesContent":[".NavBar {\n    list-style: none;\n    background-color: rgba(0, 0, 0, .7);\n    height: 10vh;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    .ul {\n        height: 100%;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        .a {\n            height: 100%;\n            width: 15rem;\n            list-style-type: none;\n            text-decoration: none;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            font-size: 2rem;\n            color: white;\n            position: relative;\n            &:hover {\n                cursor: pointer;\n                background-color: rgba(139, 0, 0, .5);\n            }\n            .li {\n                z-index: 1000;\n                font-size: 2rem;\n            }\n            &.home {\n                z-index: 100;\n                &:hover .animation {\n                    justify-content: left;\n                }\n            }\n            &.midBtn {\n                z-index: 100;\n            }\n            &.logOut {\n                z-index: 99;\n                &:hover .animation {\n                    left: 0;\n                }\n            }\n            .animation {\n                background-color: rgba(139, 0, 0, .9);\n                position: absolute;\n                left: -15rem;\n                height: 100%;\n                width: 15rem;\n                z-index: 101;\n                transition: left 0.3s ease;\n            }\n        }\n    }\n}\n\n.logo {\n    height: 10vh;\n    margin-left: 4rem;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
@@ -1865,7 +1873,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"animation": `GboWnnBRqBZoJNF1elAG`,
 	"midBtn": `H03mJm9zBIT_gZ4TjALn`,
 	"logOut": `IBF8_bfa3AKIGzStMAgN`,
-	"h1": `gfJm8VzDtdLiDqkAemvS`
+	"logo": `jYKTy3ZWAvpUGWbHDeNH`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2044,8 +2052,9 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.l6Ner7C7O5I4V69HVVgW {
-  border: 0.3rem solid purple;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,2BAAA;AACJ","sourcesContent":[".OrderList {\n    border: .3rem solid purple;\n}"],"sourceRoot":""}]);
+  width: 100vw;
+  height: 100%;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,YAAA;AACJ","sourcesContent":[".OrderList {\n    width: 100vw;\n    height: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderList": `l6Ner7C7O5I4V69HVVgW`
@@ -2074,11 +2083,33 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
-  border: 0.3rem solid pink;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,yBAAA;AACJ","sourcesContent":[".OrderListItem {\n    border: .3rem solid pink;\n}"],"sourceRoot":""}]);
+  border: 0.3rem solid black;
+  height: 10vh;
+  margin: 2rem 1rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.SsuGthhCMB1aM3ZQx6gg {
+  font-size: 2.5rem;
+}
+
+.QXlGfhNE2n4VdMJWXkTb {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.7rem;
+}
+
+.aqqLgYpXeL1z2GeUPjMc {
+  color: darkred;
+  font-size: 2.5rem;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,0BAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,kBAAA;EACA,oCAAA;AACJ;;AAEA;EACI,iBAAA;AACJ;;AAEA;EACI,yBAAA;EACA,iBAAA;AACJ;;AAEA;EACI,cAAA;EACA,iBAAA;AACJ","sourcesContent":[".OrderListItem {\n    border: .3rem solid black;\n    height: 10vh;\n    margin: 2rem 1rem;\n    border-radius: 1rem;\n    padding: 1rem 2rem;\n    background-color: rgba(0, 0, 0, .2);\n}\n\n.text {\n    font-size: 2.5rem;\n}\n\n.textDate {\n    color: rgba(0, 0, 0, .5);\n    font-size: 1.7rem;\n}\n\n.textPrice {\n    color: darkred;\n    font-size: 2.5rem;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"OrderListItem": `SbDKL2bctOyC5ZgA0KfW`
+	"OrderListItem": `SbDKL2bctOyC5ZgA0KfW`,
+	"text": `SsuGthhCMB1aM3ZQx6gg`,
+	"textDate": `QXlGfhNE2n4VdMJWXkTb`,
+	"textPrice": `aqqLgYpXeL1z2GeUPjMc`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2193,8 +2224,9 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.IaRAIZA2L_3Y09c0pb1N {
-  border: 0.3rem solid cornflowerblue;
-}`, "",{"version":3,"sources":["webpack://./src/components/UserInfo/UserInfo.module.scss"],"names":[],"mappings":"AAAA;EACE,mCAAA;AACF","sourcesContent":[".UserInfo {\n  border: .3rem solid cornflowerblue;\n}"],"sourceRoot":""}]);
+  width: 80vw;
+  text-align: left;
+}`, "",{"version":3,"sources":["webpack://./src/components/UserInfo/UserInfo.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,gBAAA;AACF","sourcesContent":[".UserInfo {\n  width: 80vw;\n  text-align: left;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"UserInfo": `IaRAIZA2L_3Y09c0pb1N`
@@ -2372,11 +2404,89 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.U7F51i6q23MB43wS4GeC {
-  border: 0.3rem dashed blue;
-}`, "",{"version":3,"sources":["webpack://./src/pages/OrderHistoryPage/OrderHistoryPage.module.scss"],"names":[],"mappings":"AAAA;EACE,0BAAA;AACF","sourcesContent":[".OrderHistoryPage {\n  border: .3rem dashed blue;\n}"],"sourceRoot":""}]);
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HcV2wG7XC_BQCokm7T9d {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.HcV2wG7XC_BQCokm7T9d .eBsYxQZrW5Lz4CnYDZlq {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-right: 30rem;
+}
+
+.pY1LRDDBM64aIQ9GJE_3 {
+  width: 13vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.L6GkoBeti2qTCCu4eYSl {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.375em 1.125em;
+  text-decoration: none;
+  font-size: 1.6rem;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  background-color: darkred;
+  color: white;
+  box-shadow: 0 0px 0px hsla(190, 15%, 5%, 0.2);
+  transform: translateY(0);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: border-top-left-radius 0.1s 0.1s ease-out, border-top-right-radius 0.1s 0.3s ease-out, border-bottom-right-radius 0.1s 0.3s ease-out, border-bottom-left-radius 0.1s 0.4s ease-out, box-shadow 0.4s ease-out, transform 0.4s ease-out, background 0.4s steps(4, jump-end);
+}
+
+.L6GkoBeti2qTCCu4eYSl:hover,
+.L6GkoBeti2qTCCu4eYSl:focus {
+  cursor: pointer;
+  box-shadow: 0 4px 8px hsla(190, 15%, 5%, 0.2);
+  transform: scale(0.8);
+  background: red;
+  border: 0.2rem solid white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.B4vi1DIfTmnXgyLEHsYx {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}`, "",{"version":3,"sources":["webpack://./src/pages/OrderHistoryPage/OrderHistoryPage.module.scss"],"names":[],"mappings":"AAAA;EACE,YAAA;EACA,WAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;AACF;;AAEA;EACE,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oCAAA;AACF;AAAE;EACE,eAAA;EACA,iBAAA;EACA,mBAAA;AAEJ;;AAEA;EACE,WAAA;EACA,WAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AACF;;AAEA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,wBAAA;EACA,qBAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,yBAAA;EACA,YAAA;EAEA,6CAAA;EACA,wBAAA;EACA,2BAAA;EACA,4BAAA;EACA,8BAAA;EACA,+BAAA;EAEA,qRACE;AAFJ;;AAWA;;EAEE,eAAA;EACA,6CAAA;EACA,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,4BAAA;EACA,6BAAA;EACA,+BAAA;EACA,gCAAA;AARF;;AAWA;EACE,kBAAA;EACA,SAAA;EACA,oCAAA;EACA,YAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;AARF","sourcesContent":[".OrderHistoryPage {\n  height: 80vh;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.bottomContainer {\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  background-color: rgba(0, 0, 0, .2);\n  .gratitude {\n    font-size: 4rem;\n    font-weight: bold;\n    margin-right: 30rem;\n  }\n}\n\n.buttonsContainer {\n  width: 13vw;\n  height: 8vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button {\n  border: none;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: .375em 1.125em;\n  text-decoration: none;\n  font-size: 1.6rem;\n  height: 100%;\n  width: 100%;\n  font-size: 2rem;\n  background-color: darkred;\n  color: white;\n  \n  box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);\n  transform: translateY(0);\n  border-top-left-radius: 0px;\n  border-top-right-radius: 0px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n        \n  transition:\n    border-top-left-radius .1s .1s ease-out,\n    border-top-right-radius .1s calc(.15s * 2) ease-out,\n    border-bottom-right-radius .1s calc(.1s * 3) ease-out,\n    border-bottom-left-radius .1s calc(.1s * 4) ease-out,\n    box-shadow calc(.1s * 4) ease-out,\n    transform calc(.1s * 4) ease-out,\n    background calc(.1s * 4) steps(4, jump-end);\n}\n\n.button:hover,\n.button:focus {\n  cursor: pointer;\n  box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);\n  transform: scale(.8);\n  background: red;\n  border: .2rem solid white;\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n  border-bottom-left-radius: 16px;\n  border-bottom-right-radius: 16px;\n}\n\n.Footer {\n  position: absolute;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, .7);\n  color: white;\n  width: 100vw;\n  height: 10vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0 2rem;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"OrderHistoryPage": `U7F51i6q23MB43wS4GeC`
+	"OrderHistoryPage": `U7F51i6q23MB43wS4GeC`,
+	"bottomContainer": `HcV2wG7XC_BQCokm7T9d`,
+	"gratitude": `eBsYxQZrW5Lz4CnYDZlq`,
+	"buttonsContainer": `pY1LRDDBM64aIQ9GJE_3`,
+	"button": `L6GkoBeti2qTCCu4eYSl`,
+	"Footer": `B4vi1DIfTmnXgyLEHsYx`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
