@@ -1,22 +1,22 @@
 .OrderListItem {
     border: .3rem solid black;
-    height: 10vh;
+    height: 12vh;
     margin: 2rem 1rem;
     border-radius: 1rem;
-    padding: 1rem 2rem;
+    padding: .5vh 2vw 1vh;
     background-color: rgba(0, 0, 0, .2);
 }
 
 .text {
-    font-size: 2.5rem;
+    font-size: 1.2vw;
 }
 
 .textDate {
     color: rgba(0, 0, 0, .5);
-    font-size: 1.7rem;
+    font-size: 1vw;
 }
 
 .textPrice {
     color: darkred;
-    font-size: 2.5rem;
+    font-size: 1.3vw;
 }

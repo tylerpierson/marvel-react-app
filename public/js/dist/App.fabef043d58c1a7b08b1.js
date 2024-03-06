@@ -1394,26 +1394,26 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   width: 30vw;
-  height: 6vh;
+  height: 12vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 1.5rem 1rem 2rem 1rem;
-  padding-bottom: 3rem;
+  padding: 2vh 0 3vh;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.6);
 }
 
 .bK78OAxP_qtIgumpkOyO {
-  font-size: 1.8rem;
+  font-size: 1.2vw;
 }
 
 .fOUq0v_W8rYxfv70uirw {
-  font-size: 1.6rem;
+  font-size: 1.3vw;
   margin: 0 0.5rem;
 }
 
 .iZ6oJDRJlBAjRnxPhUy5 {
-  font-size: 2rem;
+  font-size: 1.4vw;
 }
 
 .LDm7BTL5E2OGqQDk9oyK {
@@ -1430,7 +1430,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   background-color: red;
   color: white;
   transition: 0.2s ease;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,6BAAA;EACA,oBAAA;EACA,oDAAA;AACJ;;AAEA;EACI,iBAAA;AACJ;;AAEA;EACI,iBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,eAAA;AACJ;;AAEA;EACI,eAAA;EACA,iBAAA;EACA,mBAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,WAAA;EACA,qBAAA;AACJ;AAAI;EACI,qBAAA;EACA,YAAA;EACA,qBAAA;AAER","sourcesContent":[".LineItem {\n    width: 30vw;\n    height: 6vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    margin: 1.5rem 1rem 2rem 1rem;\n    padding-bottom: 3rem;\n    border-bottom: .1rem solid rgba(255,255,255,.6);\n}\n\n.itemTitle {\n    font-size: 1.8rem;\n}\n\n.itemQty {\n    font-size: 1.6rem;\n    margin: 0 .5rem;\n}\n\n.extPrice {\n    font-size: 2rem;\n}\n \n.btnSmall {\n    font-size: 2rem;\n    font-weight: bold;\n    border-radius: 100%;\n    border: none;\n    background-color: darkred;\n    height: 2rem;\n    width: 2rem;\n    transition: .2s ease;\n    &:hover {\n        background-color: red;\n        color: white;\n        transition: .2s ease;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,YAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;EACA,6BAAA;EACA,kBAAA;EACA,oDAAA;AACJ;;AAEA;EACI,gBAAA;AACJ;;AAEA;EACI,gBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,gBAAA;AACJ;;AAEA;EACI,eAAA;EACA,iBAAA;EACA,mBAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,WAAA;EACA,qBAAA;AACJ;AAAI;EACI,qBAAA;EACA,YAAA;EACA,qBAAA;AAER","sourcesContent":[".LineItem {\n    width: 30vw;\n    height: 12vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-evenly;\n    margin: 1.5rem 1rem 2rem 1rem;\n    padding: 2vh 0 3vh;\n    border-bottom: .1rem solid rgba(255,255,255,.6);\n}\n\n.itemTitle {\n    font-size: 1.2vw;\n}\n\n.itemQty {\n    font-size: 1.3vw;\n    margin: 0 .5rem;\n}\n\n.extPrice {\n    font-size: 1.4vw;\n}\n \n.btnSmall {\n    font-size: 2rem;\n    font-weight: bold;\n    border-radius: 100%;\n    border: none;\n    background-color: darkred;\n    height: 2rem;\n    width: 2rem;\n    transition: .2s ease;\n    &:hover {\n        background-color: red;\n        color: white;\n        transition: .2s ease;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"LineItem": `ZeRW57PNaWpYVsw6JlaC`,
@@ -1552,6 +1552,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   background-color: black;
+  width: 100%;
 }
 .eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ {
   display: flex;
@@ -1620,12 +1621,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
 }
 .eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .QYbBFvDEQ0saqEWMgAUs .hPFzDfy1orcjzK_5zwnK {
   color: red;
-  font-size: 3.5rem;
+  font-size: 2.5vw;
   font-weight: bold;
 }
 .eBz5FvD9TgyIgfFi1MdG .A3sZOIEuWqCoYRCQhGfJ .GnXUt5IX1hCCAWLhXp8D .QYbBFvDEQ0saqEWMgAUs .drthdUFoiLOgraV2BMyH {
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.3vw;
 }
 .eBz5FvD9TgyIgfFi1MdG .szJxIZ6JmL7o0WcvrfqA {
   height: 80vh;
@@ -1634,8 +1635,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 100vw;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;AACJ;AAAI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,gCAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,oCAAA;AAER;AADQ;EACE,aAAA;EACA,0CAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,6BAAA;EACA,+BAAA;EACA,kBAAA;AAGV;AAFU;EACE,WAAA;EACA,kBAAA;AAIZ;AAFU;EACE,UAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAIZ;AAHY;EACE,kBAAA;EACA,YAAA;EACA,cAAA;EACA,SAAA;EACA,eAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;AAKd;AAFU;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,kBAAA;AAIZ;AAHY;EACE,UAAA;EACA,iBAAA;EACA,iBAAA;AAKd;AAHY;EACE,YAAA;EACA,iBAAA;AAKd;AAAI;EACI,YAAA;EACA,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;AAER","sourcesContent":[".MenuList {\n    background-color: black;\n    .comicInfoContainer {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        z-index: 1000;\n        position: absolute;\n        transform: translate(-50%, -50%);\n        top: 50%;\n        left: 50%;\n        height: 100%;\n        width: 100%;\n        background-color: rgba(0, 0, 0, .6);\n        .comicInfo {\n          display: flex;\n          background-color: rgba(255,255,255, 0.9);\n          width: 50%;\n          height: 90%;\n          padding: 3rem;\n          border-top-right-radius: 10px;\n          border-bottom-left-radius: 10px;\n          position: relative;\n          .itemImage {\n            width: 100%;\n            margin-right: 2rem;\n          }\n          .closeBtn {\n            padding: 0;\n            position: absolute;\n            width: 3rem;\n            height: 3rem;\n            border-radius: 100%;\n            top: 1rem;\n            right: 1rem;\n            border: none;\n            background-color: darkred;\n            color: white;\n            transition: .2s ease;\n            .span {\n              position: absolute;\n              top: -.1rem;\n              right: 1.05rem;\n              margin: 0;\n              font-size: 3rem;\n            }\n            .left {\n              transform: rotate(195deg);\n            }\n            .right {\n              transform: rotate(165deg);\n            }\n            &:hover {\n              background-color: red;\n              cursor: pointer;\n              box-shadow: 0 0 10px black;\n              transition: .2s ease;\n            }\n          }\n          .textContainer {\n            display: flex;\n            flex-direction: column;\n            align-items: center; \n            overflow-y: scroll;\n            .itemTitle {\n              color: red;\n              font-size: 3.5rem;\n              font-weight: bold;\n            }\n            .itemDescription {\n              color: black;\n              font-size: 1.5rem;\n            }\n          }\n        }\n      }\n    .MenuListContainer {\n        height: 80vh;\n        overflow-y: scroll;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        flex-wrap: wrap;\n        width: 100vw;\n        }\n}"],"sourceRoot":""}]);
+  width: 100%;
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,WAAA;AACJ;AAAI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,kBAAA;EACA,gCAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,oCAAA;AAER;AADQ;EACE,aAAA;EACA,0CAAA;EACA,UAAA;EACA,WAAA;EACA,aAAA;EACA,6BAAA;EACA,+BAAA;EACA,kBAAA;AAGV;AAFU;EACE,WAAA;EACA,kBAAA;AAIZ;AAFU;EACE,UAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,YAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAIZ;AAHY;EACE,kBAAA;EACA,YAAA;EACA,cAAA;EACA,SAAA;EACA,eAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,yBAAA;AAKd;AAHY;EACE,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;AAKd;AAFU;EACE,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,kBAAA;AAIZ;AAHY;EACE,UAAA;EACA,gBAAA;EACA,iBAAA;AAKd;AAHY;EACE,YAAA;EACA,gBAAA;AAKd;AAAI;EACI,YAAA;EACA,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,WAAA;AAER","sourcesContent":[".MenuList {\n    background-color: black;\n    width: 100%;\n    .comicInfoContainer {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        z-index: 1000;\n        position: absolute;\n        transform: translate(-50%, -50%);\n        top: 50%;\n        left: 50%;\n        height: 100%;\n        width: 100%;\n        background-color: rgba(0, 0, 0, .6);\n        .comicInfo {\n          display: flex;\n          background-color: rgba(255,255,255, 0.9);\n          width: 50%;\n          height: 90%;\n          padding: 3rem;\n          border-top-right-radius: 10px;\n          border-bottom-left-radius: 10px;\n          position: relative;\n          .itemImage {\n            width: 100%;\n            margin-right: 2rem;\n          }\n          .closeBtn {\n            padding: 0;\n            position: absolute;\n            width: 3rem;\n            height: 3rem;\n            border-radius: 100%;\n            top: 1rem;\n            right: 1rem;\n            border: none;\n            background-color: darkred;\n            color: white;\n            transition: .2s ease;\n            .span {\n              position: absolute;\n              top: -.1rem;\n              right: 1.05rem;\n              margin: 0;\n              font-size: 3rem;\n            }\n            .left {\n              transform: rotate(195deg);\n            }\n            .right {\n              transform: rotate(165deg);\n            }\n            &:hover {\n              background-color: red;\n              cursor: pointer;\n              box-shadow: 0 0 10px black;\n              transition: .2s ease;\n            }\n          }\n          .textContainer {\n            display: flex;\n            flex-direction: column;\n            align-items: center; \n            overflow-y: scroll;\n            .itemTitle {\n              color: red;\n              font-size: 2.5vw;\n              font-weight: bold;\n            }\n            .itemDescription {\n              color: black;\n              font-size: 1.3vw;\n            }\n          }\n        }\n      }\n    .MenuListContainer {\n        height: 80vh;\n        overflow-y: scroll;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        flex-wrap: wrap;\n        width: 100%;\n        }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuList": `eBz5FvD9TgyIgfFi1MdG`,
@@ -1910,7 +1911,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.CyfcHNtv1VgnXd_5fGlq {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.3vw;
   height: 3rem;
   width: 3rem;
   border-radius: 100%;
@@ -2015,7 +2016,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.CyfcHNtv1VgnXd_5fGlq {
   border-top-right-radius: 16px;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,WAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,0BAAA;AAEJ;AAAE;EACE,WAAA;EACA,WAAA;EACA,iBAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,0BAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAEJ;AADI;EACE,eAAA;EACA,qBAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;AAGN;;AAEA;EACE,eAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,eAAA;EACA,8BAAA;EACA,uBAAA;EACA,oCAAA;EACA,aAAA;EACA,YAAA;EACA,QAAA;EACA,aAAA;AACF;;AAEA;EACE,aAAA;AACF;;AAEA;EACE,eAAA;EACA,YAAA;EACA,QAAA;EACA,yBAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AACF;;AAEA;EACE,eAAA;AACF;;AAEA;EACE,UAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AACF;;AAEA;EACE,YAAA;EACA,wBAAA;EACA,eAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,iBAAA;EACA,YAAA;EAEA,6CAAA;EACA,wBAAA;EACA,2BAAA;EACA,4BAAA;EACA,8BAAA;EACA,+BAAA;EAEA,qRACE;AAFJ;;AAWA;;EAEE,eAAA;EACA,6CAAA;EACA,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,4BAAA;EACA,6BAAA;EACA,+BAAA;EACA,gCAAA;AARF","sourcesContent":[".checkOutBtnContainer {\n  height: 5vh;\n  width: 12vw;\n  position: relative;\n  .totalQty {\n    position: absolute;\n    top: -5px;\n    left: -10px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.3rem;\n    height: 3rem;\n    width: 3rem;\n    border-radius: 100%;\n    background-color: black;\n    color: white;\n    border: .1rem solid white;\n  }\n  .cart {\n    height: 5vh;\n    width: 12vw;\n    font-size: 1.5rem;\n    text-decoration: none;\n    padding: 1rem;\n    border-radius: 1rem;\n    border: .1rem solid white;\n    background-color: darkred;\n    color: white;\n    transition: .2s ease;\n    &:hover {\n      cursor: pointer;\n      background-color: red;\n      color: white;\n      border: none;\n      transition: .2s ease;\n    }\n  }\n}\n\n.lineItemContainer {\n  font-size: 2rem;\n  height: 73vh;\n  width: 30vw;\n  overflow-y: scroll;\n  position: absolute;\n  display: none;\n  flex-direction: column;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, .8);\n  z-index: 2000;\n  bottom: 17vh;\n  right: 0;\n  padding: 1rem;\n}\n\n.lineItemContainerVisible {\n  display: flex;\n}\n\n.total {\n  position: fixed;\n  bottom: 10vh;\n  right: 0;\n  background-color: darkred;\n  color: white;\n  width: 30vw;\n  height: 7vh;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 2rem;\n}\n\n.totalPrice {\n  font-size: 3rem;\n}\n\n.buttonsContainer {\n  width: 45%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button {\n  border: none;\n  padding: .375em 1.125em;\n  font-size: 1rem;\n  height: 100%;\n  width: 100%;\n  font-size: 2rem;\n  background: black;\n  color: white;\n  \n  box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);\n  transform: translateY(0);\n  border-top-left-radius: 0px;\n  border-top-right-radius: 0px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n        \n  transition:\n    border-top-left-radius .1s .1s ease-out,\n    border-top-right-radius .1s calc(.15s * 2) ease-out,\n    border-bottom-right-radius .1s calc(.1s * 3) ease-out,\n    border-bottom-left-radius .1s calc(.1s * 4) ease-out,\n    box-shadow calc(.1s * 4) ease-out,\n    transform calc(.1s * 4) ease-out,\n    background calc(.1s * 4) steps(4, jump-end);\n}\n\n.button:hover,\n.button:focus {\n  cursor: pointer;\n  box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);\n  transform: scale(.8);\n  background: red;\n  border: .2rem solid white;\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n  border-bottom-left-radius: 16px;\n  border-bottom-right-radius: 16px;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,WAAA;EACA,kBAAA;AACF;AAAE;EACE,kBAAA;EACA,SAAA;EACA,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,YAAA;EACA,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,YAAA;EACA,0BAAA;AAEJ;AAAE;EACE,WAAA;EACA,WAAA;EACA,iBAAA;EACA,qBAAA;EACA,aAAA;EACA,mBAAA;EACA,0BAAA;EACA,yBAAA;EACA,YAAA;EACA,qBAAA;AAEJ;AADI;EACE,eAAA;EACA,qBAAA;EACA,YAAA;EACA,YAAA;EACA,qBAAA;AAGN;;AAEA;EACE,eAAA;EACA,YAAA;EACA,WAAA;EACA,kBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,eAAA;EACA,8BAAA;EACA,uBAAA;EACA,oCAAA;EACA,aAAA;EACA,YAAA;EACA,QAAA;EACA,aAAA;AACF;;AAEA;EACE,aAAA;AACF;;AAEA;EACE,eAAA;EACA,YAAA;EACA,QAAA;EACA,yBAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;AACF;;AAEA;EACE,eAAA;AACF;;AAEA;EACE,UAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,uBAAA;AACF;;AAEA;EACE,YAAA;EACA,wBAAA;EACA,eAAA;EACA,YAAA;EACA,WAAA;EACA,eAAA;EACA,iBAAA;EACA,YAAA;EAEA,6CAAA;EACA,wBAAA;EACA,2BAAA;EACA,4BAAA;EACA,8BAAA;EACA,+BAAA;EAEA,qRACE;AAFJ;;AAWA;;EAEE,eAAA;EACA,6CAAA;EACA,qBAAA;EACA,eAAA;EACA,0BAAA;EACA,4BAAA;EACA,6BAAA;EACA,+BAAA;EACA,gCAAA;AARF","sourcesContent":[".checkOutBtnContainer {\n  height: 5vh;\n  width: 12vw;\n  position: relative;\n  .totalQty {\n    position: absolute;\n    top: -5px;\n    left: -10px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.3vw;\n    height: 3rem;\n    width: 3rem;\n    border-radius: 100%;\n    background-color: black;\n    color: white;\n    border: .1rem solid white;\n  }\n  .cart {\n    height: 5vh;\n    width: 12vw;\n    font-size: 1.5rem;\n    text-decoration: none;\n    padding: 1rem;\n    border-radius: 1rem;\n    border: .1rem solid white;\n    background-color: darkred;\n    color: white;\n    transition: .2s ease;\n    &:hover {\n      cursor: pointer;\n      background-color: red;\n      color: white;\n      border: none;\n      transition: .2s ease;\n    }\n  }\n}\n\n.lineItemContainer {\n  font-size: 2rem;\n  height: 73vh;\n  width: 30vw;\n  overflow-y: scroll;\n  position: absolute;\n  display: none;\n  flex-direction: column;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  background-color: rgba(0, 0, 0, .8);\n  z-index: 2000;\n  bottom: 17vh;\n  right: 0;\n  padding: 1rem;\n}\n\n.lineItemContainerVisible {\n  display: flex;\n}\n\n.total {\n  position: fixed;\n  bottom: 10vh;\n  right: 0;\n  background-color: darkred;\n  color: white;\n  width: 30vw;\n  height: 7vh;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 2rem;\n}\n\n.totalPrice {\n  font-size: 3rem;\n}\n\n.buttonsContainer {\n  width: 45%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button {\n  border: none;\n  padding: .375em 1.125em;\n  font-size: 1rem;\n  height: 100%;\n  width: 100%;\n  font-size: 2rem;\n  background: black;\n  color: white;\n  \n  box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);\n  transform: translateY(0);\n  border-top-left-radius: 0px;\n  border-top-right-radius: 0px;\n  border-bottom-left-radius: 0px;\n  border-bottom-right-radius: 0px;\n        \n  transition:\n    border-top-left-radius .1s .1s ease-out,\n    border-top-right-radius .1s calc(.15s * 2) ease-out,\n    border-bottom-right-radius .1s calc(.1s * 3) ease-out,\n    border-bottom-left-radius .1s calc(.1s * 4) ease-out,\n    box-shadow calc(.1s * 4) ease-out,\n    transform calc(.1s * 4) ease-out,\n    background calc(.1s * 4) steps(4, jump-end);\n}\n\n.button:hover,\n.button:focus {\n  cursor: pointer;\n  box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);\n  transform: scale(.8);\n  background: red;\n  border: .2rem solid white;\n  border-top-left-radius: 16px;\n  border-top-right-radius: 16px;\n  border-bottom-left-radius: 16px;\n  border-bottom-right-radius: 16px;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"checkOutBtnContainer": `CyfcHNtv1VgnXd_5fGlq`,
@@ -2084,26 +2085,26 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
   border: 0.3rem solid black;
-  height: 10vh;
+  height: 12vh;
   margin: 2rem 1rem;
   border-radius: 1rem;
-  padding: 1rem 2rem;
+  padding: 0.5vh 2vw 1vh;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
 .SsuGthhCMB1aM3ZQx6gg {
-  font-size: 2.5rem;
+  font-size: 1.2vw;
 }
 
 .QXlGfhNE2n4VdMJWXkTb {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1.7rem;
+  font-size: 1vw;
 }
 
 .aqqLgYpXeL1z2GeUPjMc {
   color: darkred;
-  font-size: 2.5rem;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,0BAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,kBAAA;EACA,oCAAA;AACJ;;AAEA;EACI,iBAAA;AACJ;;AAEA;EACI,yBAAA;EACA,iBAAA;AACJ;;AAEA;EACI,cAAA;EACA,iBAAA;AACJ","sourcesContent":[".OrderListItem {\n    border: .3rem solid black;\n    height: 10vh;\n    margin: 2rem 1rem;\n    border-radius: 1rem;\n    padding: 1rem 2rem;\n    background-color: rgba(0, 0, 0, .2);\n}\n\n.text {\n    font-size: 2.5rem;\n}\n\n.textDate {\n    color: rgba(0, 0, 0, .5);\n    font-size: 1.7rem;\n}\n\n.textPrice {\n    color: darkred;\n    font-size: 2.5rem;\n}"],"sourceRoot":""}]);
+  font-size: 1.3vw;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,0BAAA;EACA,YAAA;EACA,iBAAA;EACA,mBAAA;EACA,sBAAA;EACA,oCAAA;AACJ;;AAEA;EACI,gBAAA;AACJ;;AAEA;EACI,yBAAA;EACA,cAAA;AACJ;;AAEA;EACI,cAAA;EACA,gBAAA;AACJ","sourcesContent":[".OrderListItem {\n    border: .3rem solid black;\n    height: 12vh;\n    margin: 2rem 1rem;\n    border-radius: 1rem;\n    padding: .5vh 2vw 1vh;\n    background-color: rgba(0, 0, 0, .2);\n}\n\n.text {\n    font-size: 1.2vw;\n}\n\n.textDate {\n    color: rgba(0, 0, 0, .5);\n    font-size: 1vw;\n}\n\n.textPrice {\n    color: darkred;\n    font-size: 1.3vw;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderListItem": `SbDKL2bctOyC5ZgA0KfW`,
