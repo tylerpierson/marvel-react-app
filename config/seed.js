@@ -72,8 +72,6 @@ const Item = require('../models/item');
       'Wasp',
       'Captain Britain',
       'World War Hulk',
-      'Star Lord',
-      'Rocket Racoon',
       'Gamora',
       'Groot',
       'Drax the Destroyer',
@@ -94,9 +92,15 @@ const Item = require('../models/item');
       'Ironheart',
       'Namor',
       'Angela',
-      'Peter Quill',
       'Cable',
-      'Juggernaut'
+      'Juggernaut',
+      'Alpha Flight',
+      'Araña',
+      'Black Cat',
+      'Mystique',
+      'Bullseye',
+      'Kingpin',
+      'Cloak and Dagger'
     ];
 
     const publicKey = process.env.PUBLIC_KEY;
