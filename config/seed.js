@@ -100,7 +100,8 @@ const Item = require('../models/item');
       'Mystique',
       'Bullseye',
       'Kingpin',
-      'Cloak and Dagger'
+      'Cloak and Dagger',
+      'Secret Invasion'
     ];
 
     const publicKey = process.env.PUBLIC_KEY;
