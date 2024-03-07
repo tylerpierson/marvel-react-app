@@ -29,8 +29,16 @@ handleSubmit = async (evt) => {
     // payload of the JSON Web Token (JWT)
     const user = await signUp(formData);
     // Baby step
-    this.props.setUser(user);
-    window.location.reload()
+    // this.props.setUser(user);
+    // window.location.reload()
+    this.props.setShowLogin(true)
+    this.setState({
+      name: '',
+      email: '',
+      password: '',
+      confirm: '',
+      error: ''
+    })
   } catch {
     // An error happened on the server
     this.setState({ error: 'Sign Up Failed - Try Again' });

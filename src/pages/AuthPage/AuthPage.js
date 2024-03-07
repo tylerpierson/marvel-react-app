@@ -8,7 +8,7 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main className={styles.AuthPage}>
-      {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+      {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} setShowLogin={setShowLogin} />}
       <div className={styles.btnContainer}>
         <h3 className={styles.h3} onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</h3>
       </div>

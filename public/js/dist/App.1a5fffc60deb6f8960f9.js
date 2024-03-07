@@ -581,8 +581,16 @@ class SignUpForm extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
           // payload of the JSON Web Token (JWT)
           const user = yield (0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_2__.signUp)(formData);
           // Baby step
-          _this.props.setUser(user);
-          window.location.reload();
+          // this.props.setUser(user);
+          // window.location.reload()
+          _this.props.setShowLogin(true);
+          _this.setState({
+            name: '',
+            email: '',
+            password: '',
+            confirm: '',
+            error: ''
+          });
         } catch (_unused) {
           // An error happened on the server
           _this.setState({
@@ -741,7 +749,8 @@ function AuthPage(_ref) {
   }, showLogin ? /*#__PURE__*/React.createElement(_components_LoginForm_LoginForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
     setUser: setUser
   }) : /*#__PURE__*/React.createElement(_components_SignUpForm_SignUpForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    setUser: setUser
+    setUser: setUser,
+    setShowLogin: setShowLogin
   }), /*#__PURE__*/React.createElement("div", {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].btnContainer
   }, /*#__PURE__*/React.createElement("h3", {
