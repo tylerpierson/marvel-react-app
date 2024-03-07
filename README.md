@@ -1,3 +1,5 @@
+![Logo Image](https://i.imgur.com/5vF9iRw.png)
+
 # Marvel Comic Shop - MarvelVerse Comics
 This is an **E-Commerce Application**, a streamlined example 
 showcasing a RESTful API seamlessly integrated with a backend **MongoDB** database.
@@ -205,3 +207,5 @@ Another method of adding more comics, or changing the comics that are currently 
     }
 ```
 By changing the **index** from 0 to your desired starting point, and by changing the **length** from 30 to the amount of comics you would like displayed, you will in turn change some of the comics listed. One thing to note, however, is that by changing the index to a higher number, you risk losing some of the characters that have less comics than your newly inputted number.
+
+**In order to use the Marvel API, be sure to leave the attribution either in the footer, or display it elsewhere on any pages that pull from the Marvel database**
