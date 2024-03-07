@@ -6,7 +6,7 @@ const Item = require('../models/item');
 
 (async function() {
   try {
-    const superheros = [
+    const superheroes = [
       'Avengers',
       'X-Men',
       'Fantastic Four',
@@ -117,7 +117,7 @@ const Item = require('../models/item');
     const comics = [];
 
     // Loop through each superhero to fetch comics
-    for (const name of superheros) {
+    for (const name of superheroes) {
       const response = await fetch(`${baseUrl}/comics?apikey=${publicKey}&ts=${timestamp}&hash=${hash}&titleStartsWith=${name}`);
       const data = await response.json();
 
