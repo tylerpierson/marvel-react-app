@@ -118,19 +118,19 @@ const Item = require('../models/item');
     const comics = [];
 
     // Loop through each superhero to fetch comics
-    for (const name of superheroes) {
-      const response = await fetch(`${baseUrl}/comics?apikey=${publicKey}&ts=${timestamp}&hash=${hash}&titleStartsWith=${name}`);
+    for (const hero of superheroes) {
+      const response = await fetch(`${baseUrl}/comics?apikey=${publicKey}&ts=${timestamp}&hash=${hash}&titleStartsWith=${hero}`);
       const data = await response.json();
 
       // Check to see if there is any data for the superheo, if not, skip to the next
       if (!data || !data.data || !data.data.results || data.data.results.length === 0) {
-        console.log(`No data found for ${name}`);
+        console.log(`No data found for ${hero}`);
         continue;
       }
 
       // Set the index that I want to start searching from
       let index = 0;
-      while (comics.filter(comic => comic.category.name === name).length < 30 && index < data.data.results.length) {
+      while (comics.filter(comic => comic.category.name === hero).length < 30 && index < data.data.results.length) {
         const comicData = data.data.results[index];
         const thumbnail = comicData.thumbnail;
 
@@ -150,7 +150,7 @@ const Item = require('../models/item');
           price: comicData.prices.find(price => price.type === 'printPrice').price,
           description: description,
           category: {
-            name: name,
+            name: hero,
           }
         };
         comics.push(item);
