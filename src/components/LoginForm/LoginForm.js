@@ -26,7 +26,7 @@ async function handleSubmit(evt) {
     // payload of the JSON Web Token (JWT)
     const user = await usersService.login(credentials);
     setUser(user);
-    navigateTo('orders/new')
+    navigateTo('/user')
   } catch {
     setError('Log In Failed - Try Again');
   }

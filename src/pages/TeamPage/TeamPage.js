@@ -1,17 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import * as itemsAPI from '../../utilities/items-api'
 import * as ordersAPI from '../../utilities/orders-api'
-import styles from './NewOrderPage.module.scss'
+import styles from './TeamPage.module.scss'
 import { Link, useNavigate } from 'react-router-dom'
-import MenuList from '../../components/MenuList/MenuList'
-import CategoryList from '../../components/CategoryList/CategoryList'
-import OrderDetail from '../../components/OrderDetail/OrderDetail'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 
-export default function NewOrderPage({ user, setUser }) {
-  const [menuItems, setMenuItems] = useState([])
-  const [activeCat, setActiveCat] = useState('')
+export default function TeamPage({ user, setUser }) {
   const [cart, setCart] = useState(null)
   const categoriesRef = useRef([])
   const navigate = useNavigate()
@@ -35,36 +30,17 @@ export default function NewOrderPage({ user, setUser }) {
   }, [])
 
   /*-- Event Handlers --*/
-  async function handleAddToOrder(itemId) {
-    const updatedCart = await ordersAPI.addItemToCart(itemId)
-    setCart(updatedCart)
-  }
-
-  async function handleChangeQty(itemId, newQty) {
-    const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty)
-    setCart(updatedCart);
-  }
-
-  async function handleCheckout() {
-    await ordersAPI.checkout();
-    navigate('/orders');
-  }
 
   return (
     <>
     <NavBar />
-    <main className={styles.NewOrderPage}>
+    <main className={styles.TeamPage}>
 
     </main>
     <footer className={styles.Footer}>
     <Footer />
     <div className={styles.orderContainer}>
-      <Link to="/orders" className={styles.Link}>PREVIOUS ORDERS</Link>
-      <OrderDetail
-          order={cart}
-          handleChangeQty={handleChangeQty}
-          handleCheckout={handleCheckout}
-      />
+      <Link to="/team" className={styles.Link}>PREVIOUS ORDERS</Link>
     </div>
     </footer>
     </>
